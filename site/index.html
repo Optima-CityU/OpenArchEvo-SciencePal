@@ -433,6 +433,13 @@ dialog.viewer .vb .svgbox{min-width:760px}
 .logos .optima{background:#fff;border-radius:10px;padding:6px 10px;height:56px;width:auto}
 .logos img.optima{height:54px!important;width:auto!important;max-width:none!important;max-height:none!important;padding:6px 12px}
 .themebtn .ic-sun{display:none}.themebtn[data-mode="dark"] .ic-sun{display:block}.themebtn[data-mode="dark"] .ic-moon{display:none}
+.curvefig img.cv{display:none;width:100%;height:auto}
+:root:not([data-theme="dark"]) html:not([lang="zh"]) .curvefig img.l.en{display:block}
+html:not([lang="zh"])[data-theme="light"] .curvefig img.l.en,html:not([lang="zh"]):not([data-theme]) .curvefig img.l.en{display:block}
+html[lang="zh"][data-theme="light"] .curvefig img.l.zh,html[lang="zh"]:not([data-theme]) .curvefig img.l.zh{display:block}
+html:not([lang="zh"])[data-theme="dark"] .curvefig img.d.en{display:block}
+html[lang="zh"][data-theme="dark"] .curvefig img.d.zh{display:block}
+.cmp-h{font:800 1.15rem var(--f-display);margin:28px 0 4px}
 </style>
 </head>
 <body>
@@ -565,9 +572,18 @@ dialog.viewer .vb .svgbox{min-width:760px}
   <div class="wrap center">
     <p class="eyebrow" data-zh="结果">Result</p>
     <h2 data-zh="同一起点，失败更少">Same start, fewer failures</h2>
-    <p class="sub" data-zh="同一起点，各搜索 3 次，每次交付最好的 2 个架构。越靠左越好。">Same six starting designs, three searches each, best two delivered. Further left is better.</p>
+    <p class="sub" data-zh="先和 OpenArchEvo v1 正面比较，再看最终交付。">First head to head with OpenArchEvo v1, then the final deliveries.</p>
   </div>
   <div class="wrap">
+    <h3 class="cmp-h" data-zh="与 OpenArchEvo v1 正面比较：同样的 GPU 预算，每组 5 次独立运行">Head to head with OpenArchEvo v1: same GPU budget, 5 independent runs each</h3>
+    <figure class="curvefig" style="margin:10px 0 6px">
+      <img class="cv l en" src="assets/curves/curves_light_en.webp" alt="Curves: good candidates, wasted trainings and best score so far versus trainings spent, OpenArchEvo v1 vs v1.5">
+      <img class="cv l zh" src="assets/curves/curves_light_zh.webp" alt="">
+      <img class="cv d en" src="assets/curves/curves_dark_en.webp" alt="">
+      <img class="cv d zh" src="assets/curves/curves_dark_zh.webp" alt="">
+      <figcaption class="note" data-zh="粗线 = 5 次运行的平均，色带 = 最小到最大。v1.5 浪费的训练更少（1.0 对 3.6，预注册指标），好候选更多（5.8 对 4.2），最好分数相当。消融显示，浪费的减少主要来自改进后的 Skill。">Thick line = mean of 5 runs; band = min to max. v1.5 wastes fewer trainings (1.0 vs 3.6, pre-registered) and finds more good candidates (5.8 vs 4.2); the best score is similar. An ablation suggests most of the waste reduction comes from the improved Skill.</figcaption>
+    </figure>
+    <h3 class="cmp-h" style="margin-top:40px" data-zh="最终交付：同一起点，各搜索 3 次，每次交付最好的 2 个架构做完整训练（越靠左越好）">Final deliveries: same start, three searches each, best two trained in full (further left is better)</h3>
 <style>
 .cmp{margin:0;color:var(--ink)}
 .cmp + .cmp{margin-top:34px}
