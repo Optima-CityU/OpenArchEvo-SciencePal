@@ -104,7 +104,7 @@
 </defs>
 <rect class="bg" width="100%" height="100%" rx="14"/><rect width="100%" height="100%" rx="14" fill="url(#c-champion-grid)"/>
 <text class="ttl" x="32" y="42" font-size="25">Discovered gate (champion)</text>
-<text x="32" y="65" font-size="12.5" fill="var(--muted)">Found by agent-driven search · 30-epoch val PPL 68.95 (3 seeds)</text>
+<text x="32" y="65" font-size="12.5" fill="var(--muted)">Found by an early OpenArchEvo search (E10) · 30-epoch val PPL 68.95 (3 seeds)</text>
 <g class="chip spk"><rect x="32" y="82" width="126" height="24" rx="12"/><text x="95" y="98" text-anchor="middle">8 spiking sites</text></g>
 <g transform="translate(53.0,237.0)">
 <rect class="panel " x="167.0" y="-101.0" width="868.6" height="360.0" rx="14"/>

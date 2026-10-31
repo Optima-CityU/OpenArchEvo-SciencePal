@@ -104,7 +104,7 @@
 </defs>
 <rect class="bg" width="100%" height="100%" rx="14"/><rect width="100%" height="100%" rx="14" fill="url(#g-r05a-ff1061-grid)"/>
 <text class="ttl" x="32" y="42" font-size="25">State-gated DeltaNet</text>
-<text x="32" y="65" font-size="12.5" fill="var(--muted)">Agent-driven search · 30-epoch val PPL 70.40 (3 seeds)</text>
+<text x="32" y="65" font-size="12.5" fill="var(--muted)">Early OpenArchEvo search (E10) · 30-epoch val PPL 70.40 (3 seeds)</text>
 <g class="chip spk"><rect x="32" y="82" width="126" height="24" rx="12"/><text x="95" y="98" text-anchor="middle">9 spiking sites</text></g>
 <g transform="translate(53.0,321.8)">
 <rect class="panel " x="162.6" y="-185.8" width="900.0" height="456.0" rx="14"/>
