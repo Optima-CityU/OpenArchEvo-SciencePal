@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta property="og:title" content="OpenArchEvo v1.5: Agents propose, evolution decides">
 <meta property="og:image" content="assets/F1_loop.webp">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('oae15-theme')||'light')}catch(e){document.documentElement.setAttribute('data-theme','light')}</script>
 <title>OpenArchEvo × SciencePal</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="OpenArchEvo v1.5: agents on SciencePal propose architectures, Skills, hypotheses and scoring rules; evolution decides which survive.">
@@ -2193,13 +2194,13 @@ python analysis/e45_analysis.py    # same pools, swapped scoring rule</pre>
 const root=document.documentElement;
 function css(k){return getComputedStyle(root).getPropertyValue(k).trim()}
 const isDark=()=>css('--bg').toLowerCase()==='#0b1120';
-try{const t=localStorage.getItem('oae15-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+try{root.setAttribute('data-theme',localStorage.getItem('oae15-theme')||'light');}catch(e){root.setAttribute('data-theme','light')}
 function updThemeIcon(){document.getElementById('themeBtn').dataset.mode=isDark()?'dark':'light'}updThemeIcon();try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',updThemeIcon)}catch(e){}
 document.getElementById('themeBtn').addEventListener('click',()=>{const n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('oae15-theme',n)}catch(e){};syncArchTheme();redraw();updThemeIcon();});
 
 /* ---------- language ---------- */
 let LANG='en';
-try{const s=localStorage.getItem('oae15-lang');LANG=s||((navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en')}catch(e){LANG=(navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en'}
+try{LANG=localStorage.getItem('oae15-lang')||'en'}catch(e){LANG='en'}
 const L=(en,zh)=>LANG==='zh'?zh:en;
 let I18N=[];
 function collect(){I18N=[...document.querySelectorAll('[data-zh]')];I18N.forEach(e=>{if(e._en===undefined)e._en=e.innerHTML});}
