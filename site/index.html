@@ -431,6 +431,7 @@ dialog.viewer .vb .svgbox{min-width:760px}
 .logos .lg-sp img.m{height:38px;width:auto}.logos .lg-sp img.w{height:28px;width:auto}
 .logos .optima{background:#fff;border-radius:10px;padding:6px 10px;height:56px;width:auto}
 .logos img.optima{height:54px!important;width:auto!important;max-width:none!important;max-height:none!important;padding:6px 12px}
+.themebtn .ic-sun{display:none}.themebtn[data-mode="dark"] .ic-sun{display:block}.themebtn[data-mode="dark"] .ic-moon{display:none}
 </style>
 </head>
 <body>
@@ -442,7 +443,7 @@ dialog.viewer .vb .svgbox{min-width:760px}
     <div class="tools">
       <button class="langbtn" id="langBtn" type="button" aria-label="Switch language / 切换语言"><span data-l="zh">中</span><span data-l="en">EN</span></button>
       <a class="iconbtn" href="https://github.com/Optima-CityU/OpenArchEvo-SciencePal" aria-label="Code on GitHub" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
-      <button class="iconbtn" id="themeBtn" type="button" aria-label="Toggle light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="iconbtn themebtn" id="themeBtn" type="button" aria-label="Switch day / night mode" title="Day / Night"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg></button>
     </div>
   </div>
 </header>
@@ -2193,7 +2194,8 @@ const root=document.documentElement;
 function css(k){return getComputedStyle(root).getPropertyValue(k).trim()}
 const isDark=()=>css('--bg').toLowerCase()==='#0b1120';
 try{const t=localStorage.getItem('oae15-theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
-document.getElementById('themeBtn').addEventListener('click',()=>{const n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('oae15-theme',n)}catch(e){};syncArchTheme();redraw();});
+function updThemeIcon(){document.getElementById('themeBtn').dataset.mode=isDark()?'dark':'light'}updThemeIcon();try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',updThemeIcon)}catch(e){}
+document.getElementById('themeBtn').addEventListener('click',()=>{const n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('oae15-theme',n)}catch(e){};syncArchTheme();redraw();updThemeIcon();});
 
 /* ---------- language ---------- */
 let LANG='en';
