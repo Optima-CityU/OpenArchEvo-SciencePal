@@ -1,0 +1,18 @@
+New task (ignore all earlier tasks in this conversation). You are a research scientist. Work unattended in {wd}/ and
+never ask questions. Read README.md, curves.csv and the three .py programs.
+
+1. Analyse curves.csv with Python in your sandbox. Explain, with numbers, how OutputGate differs from the others over
+   training (val vs train, when the advantage disappears, seed variability).
+2. Propose at most TWO falsifiable hypotheses for why OutputGate learns fast but ends up worse at 30 epochs.
+3. For each hypothesis design ONE intervention that can be tested by changing ONLY the block program: write a complete
+   modified copy of r03a-263bee.py as {wd}/h1.py (and {wd}/h2.py). Keep the class name SpikingFLABlock, its constructor
+   and forward signatures and return format, keep every nn.Linear wrapped in SpikingLinear (binary spike inputs), keep it
+   causal, and do not exceed the parameter count of r03a-263bee.py. Do not change anything outside what the hypothesis
+   needs. Check that it imports and runs a forward pass on CPU if you can.
+4. State a numeric prediction for each intervention: its 30-epoch val PPL (seed 0 and 1 mean) relative to OutputGate
+   (73.54 mean) and DeltaNet (71.84), and what the train PPL should do.
+
+Write {wd}/out.json: {{"analysis": "<= 150 words with key numbers", "hypotheses": [{{"id": "h1", "claim": str,
+"evidence_in_curves": str, "intervention": str, "program": "h1.py", "prediction": {{"val30_mean": "<number or range>",
+"vs_outputgate": "better|same|worse", "vs_deltanet": "better|same|worse", "train_ppl": str}}, "if_wrong": str}}]}}.
+Print DONE when out.json and the program files exist.

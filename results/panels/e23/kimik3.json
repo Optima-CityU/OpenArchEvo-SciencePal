@@ -1,0 +1,103 @@
+{
+ "tag": "kimik3",
+ "model_requested": "kimi-k3",
+ "status": "completed",
+ "elapsed": 260.7,
+ "model_reported": "openai/tokenhub/kimi-k3",
+ "tokens": 514741,
+ "output": {
+  "works": [
+   {
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "first_author": "Yang",
+    "year": 2024,
+    "id_or_venue": "arXiv:2412.06464",
+    "url": "https://arxiv.org/abs/2412.06464",
+    "relation": "contradicts",
+    "note": "Gated DeltaNet adds an input-dependent sigmoid/SiLU output gate (and a learned decay gate) to the DeltaNet block and reports improved perplexity and downstream results at converged scale (ICLR 2025), i.e. the gate helps at convergence, whereas the finding reports the same kind of gate ends up worse after 30 epochs. (Unsure whether the improvement isolates the output gate vs the decay gate.)"
+   },
+   {
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "first_author": "Yang",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.06635",
+    "url": "https://arxiv.org/abs/2312.06635",
+    "relation": "contradicts",
+    "note": "GLA shows that adding a data-dependent gate (per-channel, input-dependent, via low-rank projection + logsigmoid) to linear attention improves language-modelling over the ungated RetNet baseline at converged 340M/1.3B scale, suggesting gating helps at convergence rather than only early."
+   },
+   {
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "first_author": "Gu",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.00752",
+    "url": "https://arxiv.org/abs/2312.00752",
+    "relation": "qualifies",
+    "note": "Mamba's selective SSM makes the state dynamics input-dependent (a gating-like mechanism) and improves converged language-modelling, showing input-dependent multiplicative interactions can help at convergence; but it does not isolate an output gate."
+   },
+   {
+    "title": "Parallelizing Linear Transformers with the Delta Rule over Sequence Length",
+    "first_author": "Yang",
+    "year": 2024,
+    "id_or_venue": "arXiv:2406.06484",
+    "url": "https://arxiv.org/abs/2406.06484",
+    "relation": "supports",
+    "note": "DeltaNet base architecture paper; notes the original DeltaNet used an ELU+1 feature map on q/k, matching the finding's parameter-free elu+1 control that ended ~1.1 PPL better, so the elu+1 variant is a documented strong DeltaNet baseline."
+   },
+   {
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "first_author": "Qiu",
+    "year": 2025,
+    "id_or_venue": "arXiv:2505.06708",
+    "url": "https://arxiv.org/abs/2505.06708",
+    "relation": "contradicts",
+    "note": "A head-specific sigmoid output gate applied after SDPA (multiplicative, input-dependent) consistently lowers PPL and improves training stability at converged 1.7B-15B scale over 3.5T tokens, i.e. a directly analogous output gate helps at convergence, opposing the finding's long-training reversal."
+   },
+   {
+    "title": "NAS-Bench-x11 and the Power of Learning Curves",
+    "first_author": "Yan",
+    "year": 2021,
+    "id_or_venue": "NeurIPS 2021",
+    "url": "https://papers.neurips.cc/paper/2021/hash/be3159ad04564bfb90db9e32851ebf9c-Abstract.html",
+    "relation": "supports",
+    "note": "Builds surrogate NAS benchmarks with full learning curves to enable multi-fidelity methods (early stopping, learning-curve extrapolation), explicitly motivated by the fact that short-training proxies are noisy and ranking must be confirmed at higher fidelity, directly supporting the finding's multi-fidelity conclusion."
+   },
+   {
+    "title": "An extensive appraisal of weight-sharing on the NAS-Bench-101 benchmark",
+    "first_author": "C. (HAL)",
+    "year": 2022,
+    "id_or_venue": "HAL:hal-03706214",
+    "url": "https://hal.science/hal-03706214",
+    "relation": "supports",
+    "note": "Shows weight-sharing / low-fidelity proxy evaluations yield only modest Spearman rank correlation with final standalone performance and can mis-rank architectures (over-evaluation bias), so architectures chosen by a cheap proxy may not be best at full training."
+   },
+   {
+    "title": "In defense of weight-sharing for neural architecture search: an optimization perspective",
+    "first_author": "Xie",
+    "year": 2020,
+    "id_or_venue": "arXiv:2011.09073",
+    "url": "https://arxiv.org/abs/2011.09073",
+    "relation": "qualifies",
+    "note": "Argues the weight-sharing/low-fidelity supernet ranking suffers 'rank disorder' relative to fully trained models (the proxy correlation problem), partly supporting the finding, though it claims the gap can be mitigated. (arXiv id recalled; marked unsure.)"
+   },
+   {
+    "title": "Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization",
+    "first_author": "Li",
+    "year": 2016,
+    "id_or_venue": "arXiv:1603.06560",
+    "url": "https://arxiv.org/abs/1603.06560",
+    "relation": "qualifies",
+    "note": "Hyperband/successive-halving allocates more budget to configs that do well at low fidelity, presuming low-fidelity rank is informative but noisy; it hedges across fidelities, consistent with the finding that short-training rank is an imperfect proxy needing multi-fidelity confirmation."
+   },
+   {
+    "title": "Minimum Fidelity for Reliable Architecture Ranking in Bayesian NAS",
+    "first_author": "(ESU journal)",
+    "year": 2023,
+    "id_or_venue": "Electronics and Control Systems",
+    "url": "https://jrnl.kai.edu.ua/index.php/ESU/article/view/20966",
+    "relation": "supports",
+    "note": "Directly studies after how few epochs an early-training signal gives acceptable architecture ranking (rank correlation grows with epochs; ~3 epochs gives Spearman ~0.88 in their space), quantifying the finding's point that very-early proxies mis-rank. (Venue not a top-tier archive; marked unsure.)"
+   }
+  ],
+  "summary": "The finding is moderately novel but largely expected given the NAS/AutoML literature: that a 2-epoch proxy rewards fast early learners and mis-ranks architectures relative to long training is a well-documented rank-disorder / low-fidelity problem, and multi-fidelity confirmation is standard advice. The surprising part is the direction of the gating result: in large dense linear-attention and softmax-attention LLMs, input-dependent sigmoid output gates (Gated DeltaNet, GLA, Mamba, gated-attention) consistently help at convergence, whereas this small SNN gate overfits and ends up worse after 30 epochs. So the reversal is plausible for a small WikiText-2 SNN but contradicts the converged-scale gating evidence, making the overfitting/control analysis the genuinely informative contribution."
+ }
+}

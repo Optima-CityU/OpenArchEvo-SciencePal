@@ -1,0 +1,38 @@
+[
+ {
+  "id": "r02a-e29092",
+  "label": "champion",
+  "views": [
+   "code.py",
+   "rationale.md",
+   "fingerprint.json"
+  ]
+ },
+ {
+  "id": "r03a-263bee",
+  "label": "sigmoid output gate (earlier champion)",
+  "views": [
+   "code.py",
+   "rationale.md",
+   "fingerprint.json"
+  ]
+ },
+ {
+  "id": "r04e40l-93af64",
+  "label": "best E40 arm-L delivery",
+  "views": [
+   "code.py",
+   "rationale.md",
+   "fingerprint.json"
+  ]
+ },
+ {
+  "id": "i00-deltanet",
+  "label": "expert DeltaNet seed",
+  "views": [
+   "code.py",
+   "rationale.md",
+   "fingerprint.json"
+  ]
+ }
+]

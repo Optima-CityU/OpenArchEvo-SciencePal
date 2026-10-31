@@ -1,0 +1,19 @@
+New task (ignore all earlier tasks in this conversation). You are an independent reviewer re-analysing raw experiment logs.
+Work unattended in {wd}/ and never ask questions. Extract runs.tar.gz and read README.md.
+
+Using Python in your sandbox, compute from the raw events (do not trust any summary; there is none):
+1. For each run, the ordered list of trainings (by time) and their outcome (val PPL, or failed). Decide yourself how to
+   treat `infra_retrain` and state your rule.
+2. Let B = the smallest number of finished trainings among all V1 and V2 runs. For each arm: mean over its 5 runs of
+   (a) the best val PPL within the first B trainings (start from the expert value 120.641 if nothing is better),
+   (b) the number of "bad" trainings within the first B (failed, diverged/NaN, or val PPL > 130),
+   (c) the mean best-so-far curve value over trainings 1..B.
+3. Test whether the arms differ on (a) and (b) with a method suitable for 5 vs 5 runs; give p-values and say which
+   differences you consider real.
+4. Answer in one or two sentences: does the evidence support "most of the reduction in wasted trainings comes from the
+   revised Skill (A), not from the research-lead agent (V2)"? And: "the research-lead agent improves the best result"?
+5. List any data-quality problems or analysis pitfalls you found in the logs.
+
+Write {wd}/out.json: {{"rule_infra": str, "B": int, "per_arm": {{"V1": {{"best": float, "bad": float, "auc": float}}, ...}},
+"tests": [str], "claim_skill_not_agent": str, "claim_agent_improves_best": str, "issues": [str]}} and also save your
+analysis script as {wd}/analysis.py. Print DONE when out.json exists.

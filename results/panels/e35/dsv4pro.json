@@ -1,0 +1,31 @@
+{
+ "tag": "dsv4pro",
+ "model_requested": "deepseek/deepseek-v4-pro",
+ "status": "completed",
+ "elapsed": 139.0,
+ "model_reported": "deepseek/deepseek-v4-pro",
+ "tokens": 659553,
+ "output": {
+  "analysis": "Identity gate is worse early but wins late. Through epoch 16 identity val PPL is higher (113.78 vs 109.25 at e6; 102.49 vs 99.85 at e10). From e17 identity overtakes (89.88 vs 91.10) and the gap widens to -4.52 at e30 (69.02 vs 73.54). Identity train PPL stays higher all the way (40.62 vs 37.27 at e30) yet its val PPL is lower, so identity generalizes better rather than overfits. Sigmoid saturates to (0,1), capping modulation at 1.0 (attenuate-only); identity's unbounded range (amplify + invert) is what wins.",
+  "hypothesis": "The sigmoid gate's saturation to (0,1) caps the effective gate at 1.0: it can only attenuate the output, never amplify (>1) or invert (<0). The identity gate lets the gate take values >1 (amplify) and <0 (invert), giving the block a much larger effective modulation capacity. Early on this unbounded range causes instability (higher train PPL), but as training progresses the gate learns to exploit the full range, and the extra expressiveness yields better generalization at 30 epochs (identity 68.95 vs sigmoid 73.54).",
+  "predictions": {
+   "2sig": [
+    71.9,
+    0.5
+   ],
+   "tanh": [
+    71.5,
+    0.8
+   ],
+   "abs": [
+    69.5,
+    0.5
+   ]
+  },
+  "new_variant": {
+   "expr": "g * torch.sigmoid(g)",
+   "rationale": "SiLU keeps identity's unbounded positive amplification (g*sigmoid(g) ~ g for large g) while bounding the negative side smoothly (min ~ -0.28), so it retains the amplify+invert capacity that beats sigmoid but with less early-training instability than raw identity. This should beat the 68.95 champion.",
+   "predicted_ppl": 68.2
+  }
+ }
+}

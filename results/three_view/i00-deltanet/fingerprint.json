@@ -1,0 +1,33 @@
+{
+ "id": "i00-deltanet",
+ "protocol": "cpu-fp-bptt-s128-b4-st256 (OpenArchEvo behavioural fingerprint, CPU)",
+ "features": {
+  "zcp_synflow": 121.86112910088119,
+  "zcp_gradnorm": 2.122070235948058,
+  "zcp_snip": 19.282816964550875,
+  "zcp_jacob_cov": 1.7180331945419312,
+  "zcp_naswot": 3.9080421924591064,
+  "zcp_swap": 16.0,
+  "zcp_fire_rate": 0.15523071587085724,
+  "arch_total_params": 133792.0,
+  "arch_depth_proxy": 7.0,
+  "arch_num_spiking_linear": 7.0,
+  "arch_num_conv1d": 3.0,
+  "arch_gate_layer_ratio": 0.0,
+  "arch_num_expand": 1.0,
+  "arch_num_contract": 2.0,
+  "arch_bottleneck_ratio": 0.03125,
+  "arch_max_expand_ratio": 2.0,
+  "arch_avg_ffn_expansion": 2.0,
+  "arch_ffn_param_ratio": 0.49270509447496913,
+  "arch_ffn_macs_ratio": 0.4980544747081711,
+  "arch_macs_per_param": 251.77517340347316,
+  "arch_largest_subgraph_ratio": 1.0
+ },
+ "measured_2epoch_val_ppl": 120.64077620605414,
+ "epoch30_best_val_ppl_by_seed": {
+  "0": 71.718,
+  "1": 72.592,
+  "2": 71.089
+ }
+}

@@ -1,0 +1,16 @@
+New task (ignore all earlier tasks in this conversation). You are a research scientist doing a focused literature check.
+Work unattended in {wd}/ and never ask questions. Read finding.md.
+
+Use your literature / web search tools. Find published work (papers with arXiv id or venue) that bears directly on the
+finding: (a) output or input gates in linear-attention / delta-rule / state-space language models (e.g. gated linear
+attention, gated DeltaNet, GLA, Mamba-style gates), and evidence of whether they help at convergence; (b) architectures or
+search methods whose ranking under short training differs from long training (low-fidelity proxies in NAS / AutoML,
+early-epoch rank correlation); (c) gating or multiplicative interactions causing faster early training or overfitting.
+
+For each work: give exact title, first author, year, arXiv id or venue, and ONE sentence on what it shows that
+supports, contradicts or qualifies the finding. Only list works you actually found in search results; mark anything
+you are unsure about. At most 12 works.
+
+Write {wd}/out.json: {{"works": [{{"title": str, "first_author": str, "year": int, "id_or_venue": str, "url": str,
+"relation": "supports|contradicts|qualifies", "note": str}}], "summary": "<= 120 words: how novel/expected is the
+finding given the literature"}}. Print DONE when out.json exists.

@@ -1,0 +1,12 @@
+New task (ignore all earlier tasks in this conversation). You are an independent statistician auditing a research claim.
+Work unattended in {wd}/ and never ask questions. Read README.md and prereg_round8.md; analyse the CSV/JSON files with
+Python in your sandbox. Recompute everything yourself from trainings.csv and curves_2ep.csv.
+
+Check these claims and say for each: CONFIRMED / NOT CONFIRMED (your number) / CANNOT CHECK:
+C1. r02a-e29092 30-epoch mean over seeds 0,1,2 is 68.95, lower than i00-deltanet (about 71.8) and ctl-deltanet-pm (70.74) and ctl-deltanet-usegate (70.66); r03a-263bee is 73.54.
+C2. Over the 16 candidates in e29_pick.json, picking 4 by OAF = val2 + 0.5*(val2 - train2) (epoch-2 values of each candidate's search-time log) gives a 30-epoch mean (each architecture = mean of seeds 0 and 1) of about 69.9, versus about 74.7 for the 4 lowest 2-epoch val and about 74.8 for the 6-epoch top-4.
+C3. On held-out architectures (those with a 30-epoch seed-0 result that are not in e32_train.csv), Spearman(OAF, 30-epoch) is about 0.63 while Spearman(val2, 30-epoch) is about 0; report n and a bootstrap 95% interval.
+C4. 2-epoch and 6-epoch val rankings agree (Spearman about 0.94) while each correlates weakly with 30-epoch.
+Then: list the 3 most serious problems you find in the data, the selection procedure or the claims (e.g. duplicates, leakage, multiple testing, cherry-picking), with evidence.
+Write {wd}/out.json: {{"claims": {{"C1": {{"verdict": str, "your_numbers": str}}, ...}}, "problems": [str, str, str], "overall": "<= 80 words"}}
+and {wd}/analysis.py. Print DONE when both exist.

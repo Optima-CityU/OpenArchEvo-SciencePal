@@ -1,0 +1,451 @@
+variant,run,epoch,train_ppl,val_ppl
+deltanet (no gate),tr-i00-deltanet-7c2405,1,710.37,169.54
+deltanet (no gate),tr-i00-deltanet-7c2405,2,224.09,144.36
+deltanet (no gate),tr-i00-deltanet-7c2405,3,167.51,137.22
+deltanet (no gate),tr-i00-deltanet-7c2405,4,145.33,130.39
+deltanet (no gate),tr-i00-deltanet-7c2405,5,133.78,123.56
+deltanet (no gate),tr-i00-deltanet-7c2405,6,126.93,119.83
+deltanet (no gate),tr-i00-deltanet-7c2405,7,122.4,115.74
+deltanet (no gate),tr-i00-deltanet-7c2405,8,118.63,112.99
+deltanet (no gate),tr-i00-deltanet-7c2405,9,115.15,110.88
+deltanet (no gate),tr-i00-deltanet-7c2405,10,112.14,108.42
+deltanet (no gate),tr-i00-deltanet-7c2405,11,109.11,104.62
+deltanet (no gate),tr-i00-deltanet-7c2405,12,105.17,102.49
+deltanet (no gate),tr-i00-deltanet-7c2405,13,101.16,100.41
+deltanet (no gate),tr-i00-deltanet-7c2405,14,97.1,96.88
+deltanet (no gate),tr-i00-deltanet-7c2405,15,92.35,96.14
+deltanet (no gate),tr-i00-deltanet-7c2405,16,87.8,91.37
+deltanet (no gate),tr-i00-deltanet-7c2405,17,83.35,90.07
+deltanet (no gate),tr-i00-deltanet-7c2405,18,78.19,90.8
+deltanet (no gate),tr-i00-deltanet-7c2405,19,73.16,90.25
+deltanet (no gate),tr-i00-deltanet-7c2405,20,69.34,90.2
+deltanet (no gate),tr-i00-deltanet-7c2405,21,65.5,86.85
+deltanet (no gate),tr-i00-deltanet-7c2405,22,61.33,82.91
+deltanet (no gate),tr-i00-deltanet-7c2405,23,57.63,80.88
+deltanet (no gate),tr-i00-deltanet-7c2405,24,54.77,79.07
+deltanet (no gate),tr-i00-deltanet-7c2405,25,52.18,77.52
+deltanet (no gate),tr-i00-deltanet-7c2405,26,49.66,76.0
+deltanet (no gate),tr-i00-deltanet-7c2405,27,47.85,74.31
+deltanet (no gate),tr-i00-deltanet-7c2405,28,46.97,73.05
+deltanet (no gate),tr-i00-deltanet-7c2405,29,46.35,72.03
+deltanet (no gate),tr-i00-deltanet-7c2405,30,45.27,71.72
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,1,778.65,167.18
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,2,222.67,143.56
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,3,165.96,135.56
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,4,142.89,126.99
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,5,131.78,121.21
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,6,124.71,118.32
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,7,120.03,113.44
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,8,116.86,112.89
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,9,113.98,110.59
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,10,111.57,106.77
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,11,108.28,103.75
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,12,104.47,99.77
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,13,100.79,101.01
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,14,96.37,97.69
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,15,91.62,96.13
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,16,86.55,93.35
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,17,81.7,91.73
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,18,77.13,91.36
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,19,72.78,87.4
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,20,68.39,85.21
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,21,64.14,83.5
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,22,59.9,83.06
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,23,56.37,79.88
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,24,53.13,78.35
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,25,50.6,76.33
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,26,48.44,74.4
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,27,46.72,72.79
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,28,45.33,71.45
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,29,44.39,70.6
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s0-3698,30,43.3,70.33
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,1,791.8,169.52
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,2,224.07,142.2
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,3,165.89,133.88
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,4,143.02,127.44
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,5,132.11,120.92
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,6,125.44,118.45
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,7,121.59,113.85
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,8,118.53,111.29
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,9,115.41,109.77
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,10,113.04,106.87
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,11,109.91,103.83
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,12,106.75,102.64
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,13,102.98,99.32
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,14,97.93,97.32
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,15,93.15,95.88
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,16,88.46,93.86
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,17,83.33,91.84
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,18,78.36,91.84
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,19,73.92,91.47
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,20,69.53,87.02
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,21,65.08,83.26
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,22,60.99,82.42
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,23,57.5,79.89
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,24,54.51,76.94
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,25,51.89,76.12
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,26,49.71,74.05
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,27,47.88,72.52
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,28,46.61,71.25
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,29,45.66,70.65
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s1-ff06,30,44.61,70.54
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,1,713.97,169.94
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,2,223.82,144.12
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,3,166.02,136.69
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,4,143.21,129.47
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,5,132.08,122.66
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,6,125.6,115.4
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,7,120.72,114.44
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,8,117.0,110.21
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,9,113.61,106.54
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,10,110.85,107.64
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,11,107.73,103.85
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,12,105.71,102.61
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,13,106.53,100.89
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,14,106.07,100.14
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,15,102.49,96.59
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,16,98.29,95.24
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,17,91.03,91.98
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,18,85.43,92.39
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,19,79.87,90.65
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,20,74.71,88.93
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,21,70.67,86.3
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,22,66.6,84.82
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,23,62.44,83.04
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,24,58.68,80.44
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,25,55.61,78.73
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,26,53.12,76.7
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,27,51.53,74.87
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,28,50.53,73.45
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,29,49.63,72.76
+deltanet (no gate),tr-i00-deltanet-e30s1-fresh-bb28,30,48.47,72.49
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,1,713.46,167.86
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,2,216.98,138.9
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,3,157.03,130.48
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,4,131.62,120.8
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,5,118.61,116.82
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,6,110.76,110.78
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,7,105.3,106.96
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,8,101.16,105.23
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,9,98.93,101.14
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,10,95.53,102.29
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,11,92.94,99.83
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,12,90.57,98.49
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,13,88.09,94.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,14,85.37,94.05
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,15,81.61,93.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,16,78.01,95.85
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,17,74.6,93.15
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,18,70.83,87.03
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,19,66.63,86.71
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,20,62.64,86.34
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,21,58.66,84.11
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,22,54.81,81.3
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,23,51.13,80.08
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,24,47.67,79.39
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,25,44.79,77.88
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,26,42.44,76.47
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,27,40.75,75.57
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,28,39.74,74.66
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,29,39.12,73.79
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s1-cb15,30,38.16,73.5
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,1,698.69,165.62
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,2,215.23,138.77
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,3,156.58,129.56
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,4,131.12,121.59
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,5,118.16,114.31
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,6,110.27,109.6
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,7,105.49,107.03
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,8,100.96,104.51
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,9,98.22,102.31
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,10,96.3,98.82
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,11,93.18,98.96
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,12,90.37,94.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,13,87.04,93.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,14,84.12,92.06
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,15,81.22,91.09
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,16,77.05,92.33
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,17,73.44,89.38
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,18,69.4,89.04
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,19,65.12,86.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,20,60.97,85.79
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,21,57.09,85.33
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,22,53.32,82.63
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,23,49.99,81.54
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,24,46.77,79.84
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,25,44.07,78.15
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,26,41.79,76.88
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,27,40.06,75.87
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,28,39.09,74.56
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,29,38.48,73.3
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s0-3caf,30,37.46,73.23
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,1,721.96,172.28
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,2,225.53,146.21
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,3,167.23,136.84
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,4,144.24,130.33
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,5,132.48,126.6
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,6,126.93,118.37
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,7,121.45,115.22
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,8,117.96,113.32
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,9,114.8,109.23
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,10,111.08,108.62
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,11,107.8,105.15
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,12,104.63,101.53
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,13,100.41,98.46
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,14,95.78,96.88
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,15,91.34,93.65
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,16,87.1,91.67
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,17,82.33,89.6
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,18,77.52,88.41
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,19,72.95,86.58
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,20,68.39,86.49
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,21,64.51,84.83
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,22,60.64,82.93
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,23,57.04,81.03
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,24,54.36,78.96
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,25,51.84,77.08
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,26,49.34,75.27
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,27,47.68,73.52
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,28,46.83,72.24
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,29,46.17,71.47
+deltanet (no gate),tr-i00-deltanet-e30s2-fresh-f7b0,30,45.07,71.31
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,1,792.17,170.93
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,2,224.89,142.64
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,3,167.18,136.53
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,4,143.99,129.17
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,5,132.7,121.56
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,6,125.92,116.73
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,7,121.47,113.65
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,8,117.97,113.99
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,9,114.55,109.69
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,10,111.99,108.09
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,11,108.85,104.57
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,12,105.5,100.31
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,13,101.57,100.82
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,14,97.79,99.04
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,15,93.27,95.3
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,16,88.18,96.05
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,17,83.17,91.88
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,18,78.12,90.22
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,19,73.43,87.68
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,20,68.87,85.51
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,21,64.95,83.74
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,22,60.99,83.37
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,23,57.16,81.02
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,24,54.04,77.84
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,25,51.34,76.43
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,26,49.13,74.67
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,27,47.37,73.36
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,28,46.02,72.06
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,29,45.12,71.11
+deltanet_builtin_gated_norm,tr-ctl-deltanet-usegate-e30s2-1c8d,30,43.99,71.11
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,1,710.41,165.51
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,2,215.66,138.05
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,3,155.69,129.08
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,4,130.09,119.72
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,5,117.84,113.64
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,6,109.04,107.38
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,7,103.32,104.25
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,8,99.71,104.32
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,9,96.43,103.29
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,10,93.73,98.45
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,11,90.71,97.91
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,12,88.77,96.56
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,13,86.07,96.09
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,14,83.5,94.16
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,15,78.43,92.78
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,16,75.3,91.12
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,17,71.32,90.76
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,18,67.34,88.2
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,19,63.45,87.16
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,20,59.58,84.93
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,21,55.75,83.74
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,22,52.1,82.51
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,23,48.6,80.96
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,24,45.34,79.31
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,25,42.55,77.94
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,26,40.38,76.93
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,27,38.77,75.89
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,28,37.73,75.08
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,29,37.12,74.2
+sigmoid_after_oproj (old output gate),tr-r03a-263bee-e30s2-afd4,30,36.2,73.89
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,1,710.37,169.54
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,2,224.09,144.36
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,3,167.51,137.22
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,4,145.33,130.39
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,5,133.78,123.56
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,6,126.93,119.83
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,7,122.4,115.74
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,8,118.63,112.99
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,9,115.15,110.88
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,10,112.14,108.42
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,11,109.11,104.62
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,12,105.17,102.49
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,13,101.16,100.41
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,14,97.1,96.88
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,15,92.35,96.14
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,16,87.8,91.37
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,17,83.35,90.07
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,18,78.19,90.8
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,19,73.16,90.25
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,20,69.34,90.2
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,21,65.5,86.85
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,22,61.33,82.91
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,23,57.63,80.88
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,24,54.77,79.07
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,25,52.18,77.52
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,26,49.66,76.0
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,27,47.85,74.31
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,28,46.97,73.05
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,29,46.35,72.03
+deltanet (no gate),tr-i00-deltanet-e30s0-fresh-85d2,30,45.27,71.72
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,1,721.62,166.2
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,2,219.94,140.12
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,3,162.93,134.12
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,4,139.67,126.98
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,5,128.88,118.85
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,6,122.64,116.93
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,7,118.22,111.62
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,8,114.42,108.6
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,9,111.39,105.8
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,10,108.07,103.91
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,11,104.67,100.45
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,12,101.03,98.07
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,13,97.1,96.81
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,14,92.98,94.96
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,15,88.73,91.99
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,16,84.07,90.45
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,17,79.76,89.24
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,18,75.29,87.55
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,19,71.06,87.71
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,20,67.06,86.15
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,21,63.1,84.22
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,22,59.36,81.83
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,23,56.12,80.24
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,24,53.26,76.78
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,25,50.35,75.37
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,26,47.94,73.77
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,27,46.41,72.52
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,28,45.56,71.19
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,29,44.81,70.61
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s1-fa0d,30,43.71,70.27
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,1,726.9,165.07
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,2,218.11,136.14
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,3,160.42,128.91
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,4,137.07,122.15
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,5,124.78,117.76
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,6,117.42,113.78
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,7,112.31,107.87
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,8,108.28,106.25
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,9,104.92,103.42
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,10,101.44,102.49
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,11,98.54,100.56
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,12,95.34,97.68
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,13,92.16,95.7
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,14,88.81,94.79
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,15,85.51,93.28
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,16,82.02,93.18
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,17,78.03,89.88
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,18,73.5,88.65
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,19,69.04,87.03
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,20,64.69,83.77
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,21,60.54,82.69
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,22,56.79,80.71
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,23,53.1,78.06
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,24,50.09,77.21
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,25,47.47,74.95
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,26,45.26,72.6
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,27,43.7,70.97
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,28,42.52,70.06
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,29,41.61,69.17
+identity_after_oproj (new champion),tr-r02a-e29092-e30s0-e20-a60c,30,40.62,69.02
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,1,710.69,165.11
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,2,219.31,139.77
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,3,163.31,133.46
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,4,140.26,124.61
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,5,129.97,120.79
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,6,123.65,116.91
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,7,119.33,113.72
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,8,116.15,110.65
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,9,112.17,107.72
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,10,109.04,106.0
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,11,105.73,101.6
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,12,102.18,100.55
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,13,98.51,98.39
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,14,94.56,95.45
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,15,90.17,94.76
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,16,85.69,92.79
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,17,81.24,90.4
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,18,76.61,89.58
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,19,72.46,89.21
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,20,68.4,86.93
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,21,64.46,83.35
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,22,60.98,80.98
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,23,57.48,79.96
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,24,54.21,78.55
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,25,51.29,76.86
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,26,48.99,74.85
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,27,47.5,73.48
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,28,46.6,72.1
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,29,45.75,71.17
+sigmoid_before_oproj,tr-e21-i4-preproj-e30s0-a59d,30,44.64,71.23
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,1,709.68,165.23
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,2,215.07,137.54
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,3,156.43,127.91
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,4,132.04,119.51
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,5,120.77,115.61
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,6,113.75,111.95
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,7,109.44,109.65
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,8,106.82,107.51
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,9,105.36,102.9
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,10,102.44,99.36
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,11,99.15,99.71
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,12,96.02,97.69
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,13,93.31,95.06
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,14,89.11,94.91
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,15,85.62,92.9
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,16,81.71,89.89
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,17,77.33,87.61
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,18,73.05,88.42
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,19,68.64,87.45
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,20,64.62,84.29
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,21,60.72,83.85
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,22,56.66,81.78
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,23,53.01,80.04
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,24,49.82,78.67
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,25,47.01,76.68
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,26,44.91,74.55
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,27,43.39,73.51
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,28,42.17,72.51
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,29,41.28,71.88
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s1-rc3e2,30,40.28,71.53
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,1,703.83,167.87
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,2,215.54,138.87
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,3,156.76,128.77
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,4,133.02,120.97
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,5,121.37,114.57
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,6,114.24,114.66
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,7,109.81,107.25
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,8,106.73,108.52
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,9,104.01,104.22
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,10,102.05,104.07
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,11,99.31,99.11
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,12,96.38,96.49
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,13,92.86,96.29
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,14,89.63,93.57
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,15,86.09,93.72
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,16,82.15,93.09
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,17,77.44,90.83
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,18,73.23,88.67
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,19,68.54,87.98
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,20,64.42,85.65
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,21,60.11,84.66
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,22,56.1,82.22
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,23,52.48,81.6
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,24,49.39,80.32
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,25,46.59,78.22
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,26,44.17,76.35
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,27,42.36,74.53
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,28,41.25,73.06
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,29,40.45,72.58
+one_plus_tanh_after_oproj,tr-e21-i5-tanh-e30s0-8026,30,39.44,72.39

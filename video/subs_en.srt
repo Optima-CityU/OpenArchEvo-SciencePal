@@ -1,0 +1,175 @@
+1
+00:00:03,800 --> 00:00:08,432
+For billions of years, nature has run the longest search there is.
+
+2
+00:00:08,692 --> 00:00:12,988
+Make random variations. Test them. Keep what survives.
+
+3
+00:00:13,248 --> 00:00:17,496
+It needs no plan, only a clear test. But it is slow.
+
+4
+00:00:19,176 --> 00:00:23,136
+Neural network architectures are the foundation of AI.
+
+5
+00:00:23,396 --> 00:00:29,852
+Each leap came from a new architecture, yet designing one is still slow work for human experts.
+
+6
+00:00:30,932 --> 00:00:34,964
+Our target is one of the hardest: spiking language models.
+
+7
+00:00:35,224 --> 00:00:41,872
+Their core, the token mixer that carries information along the sequence, must work with on-off spikes.
+
+8
+00:00:42,132 --> 00:00:51,276
+So far it has been hand-adapted from ordinary networks, not designed for spikes, yet it promises far more energy-efficient language models.
+
+9
+00:00:52,556 --> 00:00:59,828
+Our earlier work, OpenArchEvo, was the first to make evolution over whole architecture programs feasible.
+
+10
+00:01:00,088 --> 00:01:05,272
+A language model writes whole network programs, and evolution keeps the best.
+
+11
+00:01:05,532 --> 00:01:09,492
+It found new spiking networks that beat expert designs.
+
+12
+00:01:09,752 --> 00:01:17,120
+But like nature, it proposes a lot and remembers little: many paths wander, and many candidates fail.
+
+13
+00:01:18,100 --> 00:01:20,164
+Breeders found a faster way.
+
+14
+00:01:20,424 --> 00:01:25,248
+When experience guides the variation, good designs arrive much sooner.
+
+15
+00:01:25,508 --> 00:01:27,956
+The race still decides who wins.
+
+16
+00:01:28,216 --> 00:01:32,224
+So we asked: can a team of AI agents be the breeders?
+
+17
+00:01:33,304 --> 00:01:36,328
+Agents propose, evolution decides.
+
+18
+00:01:36,588 --> 00:01:40,908
+OpenArchEvo, with a research team of agents on SciencePal.
+
+19
+00:01:42,388 --> 00:01:45,316
+The OpenArchEvo engine stays in the middle.
+
+20
+00:01:45,576 --> 00:01:48,624
+Around it, agents take on three jobs.
+
+21
+00:01:48,884 --> 00:01:53,708
+A research lead reads every result and sets the next directions.
+
+22
+00:01:53,968 --> 00:01:57,448
+A better score catches designs that only look good early.
+
+23
+00:01:57,708 --> 00:02:04,452
+And model panels improve the method itself: the playbook, the scoring rules, the hypotheses.
+
+24
+00:02:04,712 --> 00:02:07,976
+Every idea is kept only if the tests agree.
+
+25
+00:02:09,156 --> 00:02:11,436
+All of this runs on SciencePal.
+
+26
+00:02:11,696 --> 00:02:19,472
+Unlike a single coding assistant, it gives the team real GPU labs that agents start and maintain themselves,
+
+27
+00:02:19,732 --> 00:02:22,948
+sessions where several models work side by side,
+
+28
+00:02:23,208 --> 00:02:26,880
+and a hosted Skill that the platform itself helps improve.
+
+29
+00:02:32,660 --> 00:02:37,292
+Does it work? We ran both from the same start, three times each.
+
+30
+00:02:37,552 --> 00:02:44,296
+With OpenArchEvo's original selection, six of twelve delivery tests were clearly worse than the expert.
+
+31
+00:02:44,556 --> 00:02:48,180
+Add the agents' score and research lead: none.
+
+32
+00:02:48,440 --> 00:02:52,640
+Like a breeder, the lead steers the search away from dead ends.
+
+33
+00:02:54,120 --> 00:02:56,304
+Here is one decision in action.
+
+34
+00:02:56,564 --> 00:03:01,796
+The lead saw a gated design regress and suggested gating only the values.
+
+35
+00:03:02,056 --> 00:03:06,712
+The proposer wrote exactly that, and it became the team's best delivery.
+
+36
+00:03:09,192 --> 00:03:12,720
+The search also finds things a person would not think to draw.
+
+37
+00:03:12,980 --> 00:03:21,980
+A gate driven by spikes, zeros and ones, lowers perplexity from 71.8 to 68.95.
+
+38
+00:03:22,240 --> 00:03:27,976
+Feed it ordinary numbers, or add the usual sigmoid, and the gain disappears.
+
+39
+00:03:29,156 --> 00:03:31,340
+Even explanations are tested.
+
+40
+00:03:31,600 --> 00:03:36,448
+Four of five models proposed the same fix. The GPU rejected it.
+
+41
+00:03:37,628 --> 00:03:44,036
+Everything is open: the code, every architecture with its history, and every Skill version.
+
+42
+00:03:44,296 --> 00:03:49,096
+OpenArchEvo searches like nature: it works, but it remembers little.
+
+43
+00:03:49,356 --> 00:03:56,220
+With agents as breeders, every result becomes experience: less waste, fewer failures.
+
+44
+00:03:58,000 --> 00:04:01,024
+Agents propose, evolution decides.

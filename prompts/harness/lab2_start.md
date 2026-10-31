@@ -1,0 +1,2 @@
+Lab session for an OpenArchEvo GPU experiment. Work unattended; never ask questions; no web search.
+Five small files are attached: TASK.md, lab_setup.sh, lab_worker.py, prep_data.py, wikitext2_lab.yaml. First locate them (usually in /workspace; otherwise search with find, excluding /proc) and copy all five into /workspace/lab/ (create the directory). Then read /workspace/lab/TASK.md and follow it exactly.

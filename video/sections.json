@@ -1,0 +1,58 @@
+{
+ "bpm": 88,
+ "sections": [
+  {
+   "label": "intro",
+   "type": "intro",
+   "start": 0.0,
+   "end": 18.1
+  },
+  {
+   "label": "bigpicture",
+   "type": "bigpicture",
+   "start": 18.1,
+   "end": 52.2
+  },
+  {
+   "label": "breeders",
+   "type": "breeders",
+   "start": 52.2,
+   "end": 92.9
+  },
+  {
+   "label": "title",
+   "type": "title",
+   "start": 92.9,
+   "end": 102.0
+  },
+  {
+   "label": "method",
+   "type": "method",
+   "start": 102.0,
+   "end": 152.3
+  },
+  {
+   "label": "results",
+   "type": "results",
+   "start": 152.3,
+   "end": 188.8
+  },
+  {
+   "label": "discovery",
+   "type": "discovery",
+   "start": 188.8,
+   "end": 237.5
+  },
+  {
+   "label": "ending",
+   "type": "ending",
+   "start": 237.5,
+   "end": 246.7,
+   "note": "visual ends 244.3; silent by 246.7"
+  }
+ ],
+ "hits": [
+  92.9
+ ],
+ "tail": 0.0
+}

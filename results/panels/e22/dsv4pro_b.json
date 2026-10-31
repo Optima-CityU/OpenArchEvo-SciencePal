@@ -1,0 +1,89 @@
+{
+ "tag": "dsv4pro_b",
+ "model_requested": "deepseek/deepseek-v4-pro",
+ "status": "completed",
+ "elapsed": 200.2,
+ "model_reported": "deepseek/deepseek-v4-pro",
+ "tokens": 1271499,
+ "output": {
+  "rule_infra": "infra_retrain is an infrastructure failure (timeout or missing metrics file), not a model failure; the same id is retrained with identical settings. I collapse all retries of an id into one training slot (launch = first train_submitted ts) and take the last measured/train_failed as its outcome. infra_retrain does not add a slot and does not count as a bad training.",
+  "B": 26,
+  "per_arm": {
+   "V1": {
+    "best": 118.68728657240374,
+    "bad": 5.8,
+    "auc": 119.85724347542785
+   },
+   "A": {
+    "best": 118.59231752959336,
+    "bad": 1.6,
+    "auc": 119.15700826831667
+   },
+   "V2": {
+    "best": 119.86620238132157,
+    "bad": 1.8,
+    "auc": 120.26381164301566
+   }
+  },
+  "tests": [
+   {
+    "metric": "best",
+    "test": "Mann-Whitney U (two-sided)",
+    "results": {
+     "V1_vs_A": {
+      "U": 12.0,
+      "p": 1.0,
+      "mean_a": 118.68728657240374,
+      "mean_b": 118.59231752959336
+     },
+     "A_vs_V2": {
+      "U": 6.0,
+      "p": 0.2222222222222222,
+      "mean_a": 118.59231752959336,
+      "mean_b": 119.86620238132157
+     },
+     "V1_vs_V2": {
+      "U": 6.5,
+      "p": 0.24915263858192682,
+      "mean_a": 118.68728657240374,
+      "mean_b": 119.86620238132157
+     }
+    }
+   },
+   {
+    "metric": "bad",
+    "test": "Mann-Whitney U (two-sided)",
+    "results": {
+     "V1_vs_A": {
+      "U": 24.5,
+      "p": 0.015650539882205012,
+      "mean_a": 5.8,
+      "mean_b": 1.6
+     },
+     "A_vs_V2": {
+      "U": 11.5,
+      "p": 0.9127706190965621,
+      "mean_a": 1.6,
+      "mean_b": 1.8
+     },
+     "V1_vs_V2": {
+      "U": 24.0,
+      "p": 0.018490777408429176,
+      "mean_a": 5.8,
+      "mean_b": 1.8
+     }
+    }
+   }
+  ],
+  "claim_skill_not_agent": "Yes: the reduction in wasted trainings comes from the revised Skill (A): bad count drops significantly from V1 to A (p=0.016) while A->V2 shows no further reduction (p=0.913).",
+  "claim_agent_improves_best": "No: V2 does not improve the best result over A (mean best 119.866 vs 118.592, p=0.222).",
+  "issues": [
+   "infra_retrain events (34 total) are infrastructure failures (timeout, missing metrics file) retried with identical settings; I collapse retries of the same id into one training slot and use the last measured/train_failed as its outcome, so infra_retrain does not count as a bad training.",
+   "Duplicate/bit-identical measured PPL values across different ids were observed (e.g. 124.66455112038884 appears for multiple ids in V1_s1), consistent with functional duplicates that train to identical PPL; these are counted as normal trainings, not flagged as bad.",
+   "train_failed with 'diverged' (e.g. wikitext2_ppl=5.18e+21) and any NaN/inf measured value are counted as bad; measured values > 130 are also counted as bad per the task rule."
+  ]
+ },
+ "files": {
+  "analysis.py": "#!/usr/bin/env python3\n\"\"\"Independent re-analysis of raw experiment logs for /workspace/e22/dsv4pro_b/.\n\nThree arms (V1, A, V2), 5 runs each. Computes per-run ordered trainings and\noutcomes from events.jsonl, then per-arm means of best PPL, bad count, and\nbest-so-far AUC over the first B trainings, plus Mann-Whitney U tests.\n\"\"\"\nimport json\nimport os\nimport math\nfrom collections import defaultdict\nfrom scipy import stats\n\nBASE = os.path.dirname(os.path.abspath(__file__))\nRUNS = os.path.join(BASE, \"runs\")\nEXPERT_BEST = 120.641  # best expert seed val PPL\nBAD_THRESHOLD = 130.0  # val PPL above this counts as \"bad\"\n\nARMS = [\"V1\", \"A\", \"V2\"]\n\n\ndef load_events(path):\n    events = []\n    with open(path) as f:\n        for line in f:\n            line = line.strip()\n            if not line:\n                continue\n            events.append(json.loads(line))\n    return events\n\n\ndef per_run_trainings(events):\n    \"\"\"Return ordered list of trainings for one run.\n\n    Each training is identified by its id. Multiple train_submitted events for\n    the same id are retries (infra_retrain) of the same training; we collapse\n    them into one slot. The slot's launch time is the first train_submitted ts.\n    The slot's outcome is the LAST measured / train_failed event for that id\n    (the retrained result). infra_retrain itself is not a model failure and\n    does not add a separate slot nor count as bad.\n\n    Returns list of dicts: {id, launch_ts, outcome_ts, value (float or None),\n    failed (bool), diverged (bool)}.\n    \"\"\"\n    by_id = defaultdict(list)\n    for e in events:\n        if e.get(\"event\") in (\"train_submitted\", \"measured\", \"train_failed\",\n                              \"infra_retrain\"):\n            by_id[e[\"id\"]].append(e)\n\n    trainings = []\n    for tid, evs in by_id.items():\n        subs = [e for e in evs if e[\"event\"] == \"train_submitted\"]\n        if not subs:\n            continue\n        launch_ts = min(e[\"ts\"] for e in subs)\n        # terminal outcomes in time order\n        terms = [e for e in evs if e[\"event\"] in (\"measured\", \"train_failed\")]\n        terms.sort(key=lambda e: e[\"ts\"])\n        if not terms:\n            # no terminal outcome logged (still running / no result)\n            trainings.append({\"id\": tid, \"launch_ts\": launch_ts,\n                              \"outcome_ts\": None, \"value\": None,\n                              \"failed\": None, \"diverged\": None})\n            continue\n        last = terms[-1]\n        value = None\n        failed = False\n        diverged = False\n        if last[\"event\"] == \"measured\":\n            value = last.get(\"value\")\n            if value is not None and (isinstance(value, float) and\n                                      (math.isnan(value) or math.isinf(value))):\n                diverged = True\n                failed = True\n        else:  # train_failed\n            failed = True\n            err = str(last.get(\"error\", \"\"))\n            if \"diverg\" in err.lower() or \"nan\" in err.lower():\n                diverged = True\n        trainings.append({\"id\": tid, \"launch_ts\": launch_ts,\n                          \"outcome_ts\": last[\"ts\"], \"value\": value,\n                          \"failed\": failed, \"diverged\": diverged})\n\n    trainings.sort(key=lambda t: t[\"launch_ts\"])\n    return trainings\n\n\ndef is_bad(t):\n    \"\"\"A training is 'bad' if it failed, diverged/NaN, or val PPL > threshold.\"\"\"\n    if t[\"failed\"] is None:\n        return False  # no terminal outcome; not counted as bad\n    if t[\"failed\"]:\n        return True\n    if t[\"value\"] is None:\n        return False\n    if isinstance(t[\"value\"], float) and (math.isnan(t[\"value\"]) or\n                                          math.isinf(t[\"value\"])):\n        return True\n    return t[\"value\"] > BAD_THRESHOLD\n\n\ndef finished_count(trainings):\n    return sum(1 for t in trainings if t[\"failed\"] is not None)\n\n\ndef run_metrics(trainings, B):\n    \"\"\"Compute best, bad, auc for the first B trainings of a run.\"\"\"\n    firstB = trainings[:B]\n    # best val PPL within first B, starting from expert value\n    best = EXPERT_BEST\n    for t in firstB:\n        if t[\"value\"] is not None and not (isinstance(t[\"value\"], float) and\n                                           (math.isnan(t[\"value\"]) or\n                                            math.isinf(t[\"value\"]))):\n            if t[\"value\"] < best:\n                best = t[\"value\"]\n    # bad count within first B\n    bad = sum(1 for t in firstB if is_bad(t))\n    # best-so-far curve over trainings 1..B, starting from expert value\n    running_best = EXPERT_BEST\n    curve = []\n    for t in firstB:\n        if t[\"value\"] is not None and not (isinstance(t[\"value\"], float) and\n                                           (math.isnan(t[\"value\"]) or\n                                            math.isinf(t[\"value\"]))):\n            if t[\"value\"] < running_best:\n                running_best = t[\"value\"]\n        curve.append(running_best)\n    auc = sum(curve) / len(curve) if curve else EXPERT_BEST\n    return best, bad, auc\n\n\ndef main():\n    # gather per-run trainings\n    run_trainings = {}\n    for arm in ARMS:\n        for s in range(1, 6):\n            path = os.path.join(RUNS, f\"{arm}_s{s}\", \"events.jsonl\")\n            events = load_events(path)\n            run_trainings[f\"{arm}_s{s}\"] = per_run_trainings(events)\n\n    # B = smallest number of finished trainings among all V1 and V2 runs\n    finished = {}\n    for arm in (\"V1\", \"V2\"):\n        for s in range(1, 6):\n            key = f\"{arm}_s{s}\"\n            finished[key] = finished_count(run_trainings[key])\n    B = min(finished.values())\n\n    # per-run metrics\n    per_run = {}\n    for arm in ARMS:\n        for s in range(1, 6):\n            key = f\"{arm}_s{s}\"\n            best, bad, auc = run_metrics(run_trainings[key], B)\n            per_run[key] = {\"best\": best, \"bad\": bad, \"auc\": auc}\n\n    # per-arm means\n    per_arm = {}\n    for arm in ARMS:\n        vals = [per_run[f\"{arm}_s{s}\"] for s in range(1, 6)]\n        per_arm[arm] = {\n            \"best\": sum(v[\"best\"] for v in vals) / 5,\n            \"bad\": sum(v[\"bad\"] for v in vals) / 5,\n            \"auc\": sum(v[\"auc\"] for v in vals) / 5,\n        }\n\n    # tests: Mann-Whitney U (5 vs 5), two-sided\n    tests = []\n    def mwu(metric):\n        res = {}\n        for a, b in [(\"V1\", \"A\"), (\"A\", \"V2\"), (\"V1\", \"V2\")]:\n            x = [per_run[f\"{a}_s{s}\"][metric] for s in range(1, 6)]\n            y = [per_run[f\"{b}_s{s}\"][metric] for s in range(1, 6)]\n            u, p = stats.mannwhitneyu(x, y, alternative=\"two-sided\")\n            res[f\"{a}_vs_{b}\"] = {\"U\": float(u), \"p\": float(p),\n                                  \"mean_a\": sum(x) / 5, \"mean_b\": sum(y) / 5}\n        return res\n\n    tests.append({\"metric\": \"best\", \"test\": \"Mann-Whitney U (two-sided)\",\n                  \"results\": mwu(\"best\")})\n    tests.append({\"metric\": \"bad\", \"test\": \"Mann-Whitney U (two-sided)\",\n                  \"results\": mwu(\"bad\")})\n\n    # claims\n    # claim_skill_not_agent: most reduction in wasted trainings from A (skill),\n    # not V2 (agent). Wasted = bad count. Compare V1->A vs A->V2.\n    bad_v1 = per_arm[\"V1\"][\"bad\"]\n    bad_a = per_arm[\"A\"][\"bad\"]\n    bad_v2 = per_arm[\"V2\"][\"bad\"]\n    red_skill = bad_v1 - bad_a\n    red_agent = bad_a - bad_v2\n    p_skill = mwu(\"bad\")[\"V1_vs_A\"][\"p\"]\n    p_agent = mwu(\"bad\")[\"A_vs_V2\"][\"p\"]\n    if red_skill > 0 and red_agent <= 0 and p_skill < 0.05:\n        claim_skill = (\"Yes: the reduction in wasted trainings comes from the \"\n                       \"revised Skill (A): bad count drops significantly from \"\n                       \"V1 to A (p=%.3f) while A->V2 shows no further reduction \"\n                       \"(p=%.3f).\" % (p_skill, p_agent))\n    elif red_skill > 0 and red_agent > 0 and p_skill < 0.05 and p_agent < 0.05:\n        claim_skill = (\"Partially: both A and V2 reduce bad count, but the \"\n                       \"larger, significant drop is V1->A (p=%.3f); A->V2 also \"\n                       \"significant (p=%.3f).\" % (p_skill, p_agent))\n    else:\n        claim_skill = (\"No/weak: the evidence does not clearly support that \"\n                       \"most reduction comes from A. V1->A change p=%.3f, \"\n                       \"A->V2 change p=%.3f.\" % (p_skill, p_agent))\n\n    # claim_agent_improves_best: does V2 improve best result over A?\n    best_a = per_arm[\"A\"][\"best\"]\n    best_v2 = per_arm[\"V2\"][\"best\"]\n    p_best = mwu(\"best\")[\"A_vs_V2\"][\"p\"]\n    if best_v2 < best_a and p_best < 0.05:\n        claim_best = (\"Yes: V2 improves the best result over A (mean best %.3f \"\n                      \"-> %.3f, p=%.3f).\" % (best_a, best_v2, p_best))\n    elif best_v2 < best_a:\n        claim_best = (\"Weak: V2 mean best (%.3f) is lower than A (%.3f) but not \"\n                      \"significant (p=%.3f).\" % (best_v2, best_a, p_best))\n    else:\n        claim_best = (\"No: V2 does not improve the best result over A (mean \"\n                      \"best %.3f vs %.3f, p=%.3f).\" % (best_v2, best_a, p_best))\n\n    # issues\n    issues = []\n    # infra_retrain handling\n    n_infra = 0\n    for arm in ARMS:\n        for s in range(1, 6):\n            events = load_events(os.path.join(RUNS, f\"{arm}_s{s}\", \"events.jsonl\"))\n            n_infra += sum(1 for e in events if e.get(\"event\") == \"infra_retrain\")\n    issues.append(\n        \"infra_retrain events (%d total) are infrastructure failures (timeout, \"\n        \"missing metrics file) retried with identical settings; I collapse \"\n        \"retries of the same id into one training slot and use the last \"\n        \"measured/train_failed as its outcome, so infra_retrain does not count \"\n        \"as a bad training.\" % n_infra)\n\n    # runs with train_submitted but no terminal outcome (unfinished)\n    unfinished = []\n    for arm in ARMS:\n        for s in range(1, 6):\n            key = f\"{arm}_s{s}\"\n            for t in run_trainings[key]:\n                if t[\"failed\"] is None:\n                    unfinished.append(f\"{key}:{t['id']}\")\n    if unfinished:\n        issues.append(\n            \"Some train_submitted ids have no terminal measured/train_failed \"\n            \"outcome in the log (%d): %s. These are excluded from finished \"\n            \"counts and from bad/best/auc within first B.\" % (\n                len(unfinished), \", \".join(unfinished[:8])))\n\n    # duplicate measured values (bit-identical) - potential functional dup\n    issues.append(\n        \"Duplicate/bit-identical measured PPL values across different ids were \"\n        \"observed (e.g. 124.66455112038884 appears for multiple ids in V1_s1), \"\n        \"consistent with functional duplicates that train to identical PPL; \"\n        \"these are counted as normal trainings, not flagged as bad.\")\n\n    # diverged / NaN handling\n    issues.append(\n        \"train_failed with 'diverged' (e.g. wikitext2_ppl=5.18e+21) and any \"\n        \"NaN/inf measured value are counted as bad; measured values > 130 are \"\n        \"also counted as bad per the task rule.\")\n\n    out = {\n        \"rule_infra\": (\n            \"infra_retrain is an infrastructure failure (timeout or missing \"\n            \"metrics file), not a model failure; the same id is retrained with \"\n            \"identical settings. I collapse all retries of an id into one \"\n            \"training slot (launch = first train_submitted ts) and take the \"\n            \"last measured/train_failed as its outcome. infra_retrain does not \"\n            \"add a slot and does not count as a bad training.\"),\n        \"B\": B,\n        \"per_arm\": per_arm,\n        \"tests\": tests,\n        \"claim_skill_not_agent\": claim_skill,\n        \"claim_agent_improves_best\": claim_best,\n        \"issues\": issues,\n    }\n\n    out_path = os.path.join(BASE, \"out.json\")\n    with open(out_path, \"w\") as f:\n        json.dump(out, f, indent=2)\n    print(\"B =\", B)\n    print(\"finished counts:\", finished)\n    print(\"per_arm:\", json.dumps(per_arm, indent=2))\n    print(\"tests:\", json.dumps(tests, indent=2))\n    print(\"claim_skill_not_agent:\", claim_skill)\n    print(\"claim_agent_improves_best:\", claim_best)\n    print(\"DONE\")\n\n\nif __name__ == \"__main__\":\n    main()\n"
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "tag": "dsv4flash",
+ "model_requested": null,
+ "status": "completed",
+ "elapsed": 139.3,
+ "model_reported": "platform::deepseek/deepseek-v4-flash",
+ "tokens": 781758,
+ "output": {
+  "analysis": "Identity gate leads early (epoch2 136.14 vs sigmoid 138.77), falls behind mid-training (epoch6 113.78 vs 109.60), then overtakes decisively from epoch20 and ends 4.2 PPL better (69.02 vs 73.23, seed0). Both overfit, but identity keeps a smaller train-val gap throughout the late phase (epoch30 gap 28.40 vs sigmoid 35.77) while its train PPL is higher (40.62 vs 37.46): identity generalizes better, it does not fit harder. The sigmoid gate saturates to a near-binary on/off switch that memorizes training; the identity gate stays a smooth signed modulator.",
+  "hypothesis": "The sigmoid gate's saturation (gradient -> 0 near 0 and 1) collapses the gate to a near-binary on/off switch that overfits training patterns, so its validation PPL degrades late in training. The identity gate keeps an unbounded, signed, non-saturating gradient, so it learns a smooth multiplicative modulation that generalizes better (smaller train-val gap at epoch 30). The mechanism that matters is unbounded magnitude with a smooth gradient, not the sign. Falsification: if a bounded gate (tanh, 2*sigmoid) matches identity's 30-epoch PPL, the hypothesis is wrong.",
+  "predictions": {
+   "2sig": [
+    71.5,
+    1.0
+   ],
+   "tanh": [
+    70.5,
+    1.0
+   ],
+   "abs": [
+    69.5,
+    0.8
+   ]
+  },
+  "new_variant": {
+   "expr": "g * torch.sigmoid(g)",
+   "rationale": "Keeps identity's unbounded signed scaling (g carries sign and magnitude) while the sigmoid factor (0,1) adds a learned soft magnitude control that identity lacks, all with a smooth non-saturating gradient in g. This should generalize as well as identity but with extra expressivity, beating 68.95.",
+   "predicted_ppl": 68.0
+  }
+ }
+}

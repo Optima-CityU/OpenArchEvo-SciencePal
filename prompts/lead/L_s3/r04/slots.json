@@ -1,0 +1,104 @@
+[
+ {
+  "island": 0,
+  "role": "explore",
+  "parents": [
+   "i10-s0337"
+  ],
+  "weight": [
+   1.0,
+   0.0
+  ]
+ },
+ {
+  "island": 0,
+  "role": "recombine",
+  "parents": [
+   "r02e40l-e733f7",
+   "i00-mamba2-ssd"
+  ],
+  "weight": [
+   0.938,
+   0.062
+  ]
+ },
+ {
+  "island": 0,
+  "role": "simplify",
+  "parents": [
+   "i00-hgrn2"
+  ],
+  "weight": [
+   0.875,
+   0.125
+  ]
+ },
+ {
+  "island": 1,
+  "role": "recombine",
+  "parents": [
+   "r02e40l-dfde00",
+   "i03-s0335"
+  ],
+  "weight": [
+   0.812,
+   0.188
+  ]
+ },
+ {
+  "island": 1,
+  "role": "simplify",
+  "parents": [
+   "i10-s0337"
+  ],
+  "weight": [
+   0.75,
+   0.25
+  ]
+ },
+ {
+  "island": 1,
+  "role": "explore",
+  "parents": [
+   "r02e40l-d28f3c"
+  ],
+  "weight": [
+   0.688,
+   0.312
+  ]
+ },
+ {
+  "island": 2,
+  "role": "simplify",
+  "parents": [
+   "r02e40l-781c5f"
+  ],
+  "weight": [
+   0.625,
+   0.375
+  ]
+ },
+ {
+  "island": 2,
+  "role": "explore",
+  "parents": [
+   "r01e40l-33e606"
+  ],
+  "weight": [
+   0.562,
+   0.438
+  ]
+ },
+ {
+  "island": 2,
+  "role": "recombine",
+  "parents": [
+   "i00-deltanet",
+   "r03e40l-531309"
+  ],
+  "weight": [
+   0.5,
+   0.5
+  ]
+ }
+]

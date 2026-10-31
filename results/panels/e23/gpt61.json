@@ -1,0 +1,94 @@
+{
+ "tag": "gpt61",
+ "model_requested": "codex/gpt-6.1-sol-high",
+ "status": "completed",
+ "elapsed": 996.7,
+ "model_reported": "codex/gpt-6.1-sol-high",
+ "tokens": 5401822,
+ "output": {
+  "works": [
+   {
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "first_author": "Songlin Yang",
+    "year": 2024,
+    "id_or_venue": "arXiv:2412.06464; ICLR 2025",
+    "url": "https://arxiv.org/html/2412.06464v1",
+    "relation": "qualifies",
+    "note": "The trained-model ablation in Appendix A.2 reports worse average evaluation perplexity without the output gate, while the main model also adds a distinct recurrent forgetting gate, qualifying any general claim that gating only helps early rather than establishing or refuting the specific spiking WikiText-2 reversal [ref:6]."
+   },
+   {
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "first_author": "Songlin Yang",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.06635; ICML 2024",
+    "url": "https://arxiv.org/html/2312.06635v3",
+    "relation": "qualifies",
+    "note": "GLA reports benefits from data-dependent state decay but marginally better training perplexity after removing its beta gate, showing that gate placement matters, although these ablations measure training perplexity after a fixed token budget rather than converged validation generalization [ref:11]."
+   },
+   {
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "first_author": "Albert Gu",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.00752",
+    "url": "https://arxiv.org/html/2312.00752v2",
+    "relation": "qualifies",
+    "note": "Language-model ablations at Chinchilla token budgets favor input-dependent selective state-space parameters and identify the gating-related delta parameter as especially important, but do not isolate a sigmoid output gate or demonstrate asymptotic convergence or the SNN ranking reversal [ref:17]."
+   },
+   {
+    "title": "NAS-Bench-101: Towards Reproducible Neural Architecture Search",
+    "first_author": "Chris Ying",
+    "year": 2019,
+    "id_or_venue": "arXiv:1902.09635; ICML 2019",
+    "url": "https://arxiv.org/html/1902.09635",
+    "relation": "supports",
+    "note": "The benchmark attributes weak Hyperband and BOHB speedups to low rank correlation across training budgets and warns that intermediate checkpoints are learning-rate-schedule dependent, directly supporting caution about short-training architecture rankings, albeit on image classifiers rather than SNN language models [ref:41]."
+   },
+   {
+    "title": "Efficient Global Neural Architecture Search",
+    "first_author": "Shahid Siddiqui",
+    "year": 2025,
+    "id_or_venue": "arXiv:2502.03553; SN Computer Science 6, 282 (2025)",
+    "url": "https://arxiv.org/html/2502.03553v1",
+    "relation": "supports",
+    "note": "For 240 CIFAR-10 architectures, the paper reports only 0.65 Spearman correlation between one-epoch and fifty-epoch validation rankings, supporting the possibility that short-training search selects fast starters rather than the best longer-trained architecture [ref:36]."
+   },
+   {
+    "title": "Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization",
+    "first_author": "Lisha Li",
+    "year": 2018,
+    "id_or_venue": "arXiv:1603.06560; Journal of Machine Learning Research 18(185):1-52",
+    "url": "https://arxiv.org/html/1603.06560v4",
+    "relation": "supports",
+    "note": "Hyperband explicitly discusses better eventual models having slower convergence and hedges early-stopping aggressiveness across resource-allocation brackets, supporting multi-fidelity confirmation while warning that uninformative low-resource performance can limit its benefit [ref:58]."
+   },
+   {
+    "title": "Random Search and Reproducibility for Neural Architecture Search",
+    "first_author": "Liam Li",
+    "year": 2020,
+    "id_or_venue": "arXiv:1902.07638; PMLR 115:367-377 (2020), UAI proceedings",
+    "url": "https://proceedings.mlr.press/v115/li20c.html",
+    "relation": "qualifies",
+    "note": "The venue abstract reports competitive random-search-with-early-stopping results on Penn Treebank and CIFAR-10, qualifying the finding by showing that partial-training search can remain useful without establishing that early rankings reliably match final rankings (abstract-only evidence here) [ref:27]."
+   },
+   {
+    "title": "Language Modeling with Gated Convolutional Networks",
+    "first_author": "Yann N. Dauphin",
+    "year": 2017,
+    "id_or_venue": "arXiv:1612.08083; ICML 2017",
+    "url": "https://arxiv.org/html/1612.08083v3",
+    "relation": "supports",
+    "note": "The paper reports faster convergence with gated linear units than tanh-based gates and overfitting of its gated convolutional model on small Penn Treebank, making the finding plausible while not isolating gating as the cause of overfitting or demonstrating an early-to-late ranking reversal [ref:45]."
+   },
+   {
+    "title": "GLU Variants Improve Transformer",
+    "first_author": "Noam Shazeer",
+    "year": 2020,
+    "id_or_venue": "arXiv:2002.05202",
+    "url": "https://arxiv.org/html/2002.05202",
+    "relation": "qualifies",
+    "note": "Parameter- and compute-matched GLU-family feed-forward layers improve held-out pretraining log-perplexity at both shorter and longer training budgets, qualifying any universal gate-overfitting explanation while providing a precedent for capacity-matched controls outside delta-rule models [ref:51]."
+   }
+  ],
+  "summary": "The general conclusion is expected: NAS and AutoML literature already documents unreliable early rankings and motivates multi-fidelity evaluation. Gated language models also provide precedents for faster optimization and small-data overfitting, but not proof that gates cause the latter. The potentially distinctive contribution is the controlled early-to-late reversal for a spiking DeltaNet output gate on WikiText-2, particularly against parameter-matched and built-in-gate controls. Existing Gated DeltaNet output-gate ablations instead show benefits after their training budget, so gate placement, parameterization, data scale, and training protocol matter. None of these sources establishes the exact SNN reversal; finite-budget results should not be equated with proven convergence, and multi-seed confirmation remains important."
+ }
+}

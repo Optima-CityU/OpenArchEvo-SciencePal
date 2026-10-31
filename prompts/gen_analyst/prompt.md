@@ -1,0 +1,1 @@
+Read the attached file TASK.md (find it under /workspace; otherwise use find, excluding /proc) and follow it exactly, unattended.

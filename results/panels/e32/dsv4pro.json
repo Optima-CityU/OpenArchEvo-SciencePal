@@ -1,0 +1,42 @@
+{
+ "tag": "dsv4pro",
+ "model_requested": "deepseek/deepseek-v4-pro",
+ "status": "completed",
+ "elapsed": 323.1,
+ "model_reported": "deepseek/deepseek-v4-pro",
+ "tokens": 2499686,
+ "output": {
+  "analysis": "val_ppl_ep2 alone ranks poorly: Spearman rho=0.34 vs 30-epoch PPL on the 17 train points (e.g. r16v1-8a5df4 has a good 2-epoch val 121.58 but diverges to 118.55 at 30ep). The train/val gap at ep2 is more informative: rho(ln(train_ppl_ep2/val_ppl_ep2), 30ep)=-0.50, and the fixed ratio val_ppl_ep2/(train_ppl_ep2/val_ppl_ep2)=val_ppl_ep2^2/train_ppl_ep2 gives rho=0.64. Adding a small penalty for removing the short-convolution path (a known divergence risk; the only two no-short-conv train archs average 97.8 vs 76.6) raises train rho to 0.76. Best 30ep archs (69-72) all have low val_ppl_ep2^2/train_ppl_ep2 (~72-74).",
+  "hypothesis": "The gap between train and validation PPL at epoch 2 (train_ppl_ep2/val_ppl_ep2) measures remaining optimization headroom: a model still far above its val PPL is still fitting hard and will keep improving by epoch 30, while one already near its val PPL has plateaued; combining this headroom with the absolute val level predicts 30-epoch quality better than val_ppl_ep2 alone, and removing the short-convolution path is a divergence risk.",
+  "formula": "score = val_ppl_ep2 / (train_ppl_ep2 / val_ppl_ep2) + 5 * (1 - short_conv) = val_ppl_ep2^2 / train_ppl_ep2 + 5 * (1 - short_conv); lower is better",
+  "fitted_constants": 1,
+  "train_rho": 0.7598,
+  "expected_test_rho": 0.6,
+  "test_ranking": [
+   "r14a-d60a72",
+   "r09v1-673a31",
+   "r14a-acc9a5",
+   "r03a5-b5331e",
+   "r13v2-c0de0b",
+   "r03v2nk-a7e01d",
+   "r05a-cac0f0",
+   "r06v2-5fbf90",
+   "r08a-fb7725",
+   "r03a-41565f",
+   "r12v2-d688f2",
+   "r13v2-404945",
+   "r05a-c05337",
+   "r14v1-545f8a",
+   "r02a5-7e4ed8",
+   "r09a-22a7de",
+   "r02a5-e8882f",
+   "r06v1-c7c3fe",
+   "r10a-7897ed",
+   "r16v1-9c505f",
+   "r11v1-0220f7"
+  ]
+ },
+ "files": {
+  "predictor.py": "# -*- coding: utf-8 -*-\n\"\"\"Cheap predictor of 30-epoch validation PPL from a 2-epoch run + program source.\n\nMechanistic hypothesis:\n    The gap between train and validation PPL at epoch 2 (train_ppl_ep2 / val_ppl_ep2)\n    measures how much optimization headroom remains. A model whose train PPL is still\n    far above its val PPL at epoch 2 is still fitting hard and will keep improving by\n    epoch 30, whereas a model already close to its val PPL has plateaued. Combining\n    this headroom with the absolute val level predicts 30-epoch quality better than\n    val_ppl_ep2 alone. Removing the short-convolution (local-context) path is a known\n    divergence risk, so architectures without it get a small penalty.\n\nFormula (1 fitted constant, pen=5):\n    ratio   = train_ppl_ep2 / val_ppl_ep2\n    score   = val_ppl_ep2 / ratio + pen * (1 - short_conv)\n            = val_ppl_ep2**2 / train_ppl_ep2 + 5 * (1 - short_conv)\n    lower score = predicted better (lower) 30-epoch PPL.\n\"\"\"\nimport re\n\n\ndef _has_short_conv(code: str) -> bool:\n    \"\"\"Detect whether the program keeps the short-convolution (local context) path.\"\"\"\n    m = re.search(r\"use_short_conv\\s*:\\s*bool\\s*=\\s*(\\w+)\", code)\n    if m:\n        return m.group(1) == \"True\"\n    return \"ShortConvolution(\" in code\n\n\ndef score(row: dict, code: str) -> float:\n    \"\"\"Return a lower-is-better prediction of the 30-epoch validation PPL.\n\n    row: dict with test.csv columns as strings (val_ppl_ep2, train_ppl_ep2, ...).\n    code: the program source defining the SpikingFLABlock.\n    \"\"\"\n    v2 = float(row[\"val_ppl_ep2\"])\n    t2 = float(row[\"train_ppl_ep2\"])\n    ratio = t2 / v2\n    pen = 5.0\n    sc = 1.0 if _has_short_conv(code) else 0.0\n    return v2 / ratio + pen * (1.0 - sc)\n"
+ }
+}

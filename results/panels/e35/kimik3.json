@@ -1,0 +1,31 @@
+{
+ "tag": "kimik3",
+ "model_requested": "kimi-k3",
+ "status": "completed",
+ "elapsed": 257.9,
+ "model_reported": "openai/tokenhub/kimi-k3",
+ "tokens": 697789,
+ "output": {
+  "analysis": "Sigmoid gate overfits: train30=37.27 (lowest) but val30=73.54 (worst), gap=36.27. Identity gate trains slightly worse (40.62) yet generalizes best (val30=69.02; README 68.95 across 3 seeds), gap=28.40. No-gate DeltaNet: train30=46.02, val30=71.81, gap=25.79. Sigmoid leads early (epoch2 138.57 vs 136.14; epoch4 120.70 vs 122.15) but identity overtakes ~epoch17 and ends 4.5 PPL better (ep30 73.54 vs 69.02). Sigmoid's bounded (0,1) attenuation-only gate forces overfit; identity's unbounded, sign-free gate generalizes.",
+  "hypothesis": "The sigmoid gate compresses the real-valued gate g into (0,1), so it can only attenuate the output (multiply by a factor <1) and can never amplify. To keep output magnitude the network must push g large, and the bounded, attenuation-only modulation drives the model to overfit the training set (lowest train PPL 37.27, largest train-val gap 36.27). The identity gate lets g be negative or >1, so it can both attenuate and amplify, giving a richer, better-regularized modulation that generalizes (val30 68.95). Removing the sigmoid helps because it restores the gate's ability to amplify and flip sign, which the bounded sigmoid destroys.",
+  "predictions": {
+   "2sig": [
+    71.5,
+    0.8
+   ],
+   "tanh": [
+    72.5,
+    0.8
+   ],
+   "abs": [
+    69.5,
+    0.6
+   ]
+  },
+  "new_variant": {
+   "expr": "g * torch.sigmoid(g)",
+   "rationale": "Keeps the champion's unbounded positive amplification (for large positive g, g*sigmoid(g) ~ g, matching identity) while smoothly damping large negative g toward 0, adding a mild data-dependent regularizer that reduces variance from sign-flipping gates without capping the amplifying range that drives the champion's generalization.",
+   "predicted_ppl": 68.3
+  }
+ }
+}

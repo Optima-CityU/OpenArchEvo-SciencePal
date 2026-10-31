@@ -1,0 +1,17 @@
+New task (ignore all earlier tasks in this conversation). You are a research scientist. Work unattended in {wd}/ and
+never ask questions. Read README.md, then analyse train.csv (and, if useful, programs.zip) with Python in your sandbox.
+
+Goal: design a cheap predictor of the 30-epoch validation perplexity that uses ONLY information available after a
+2-epoch run plus the program itself (the columns of test.csv and the program source). It will be scored by Spearman
+rank correlation with the true 30-epoch results on the 21 held-out test architectures.
+
+1. Explain, with numbers from train.csv, why val_ppl_ep2 alone ranks poorly, and what signal might do better.
+2. State ONE falsifiable mechanistic hypothesis behind your predictor (one or two sentences).
+3. Implement it as {wd}/predictor.py with a function `score(row: dict, code: str) -> float` (lower = predicted better
+   30-epoch PPL; `row` has the test.csv columns as strings, `code` is the program source). Keep it simple: with 17
+   training points, at most 2 fitted constants; prefer a fixed formula. No external downloads.
+4. Report its Spearman rho on train.csv, and write your predicted ranking of the 21 test architectures.
+
+Write {wd}/out.json: {{"analysis": "<= 120 words with numbers", "hypothesis": str, "formula": "plain-text formula",
+"fitted_constants": int, "train_rho": number, "expected_test_rho": number, "test_ranking": [arch ids, best first]}}.
+Print DONE when out.json and predictor.py exist.

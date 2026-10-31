@@ -1,0 +1,378 @@
+[
+ {
+  "id": "r02a-e29092",
+  "role": "champion: post-o_proj spiking multiplicative gate",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 69.017,
+   "1": 68.878,
+   "2": 68.955
+  }
+ },
+ {
+  "id": "r03a-263bee",
+  "role": "earlier champion: sigmoid output gate",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 73.23,
+   "1": 73.501,
+   "2": 73.895
+  }
+ },
+ {
+  "id": "i00-deltanet",
+  "role": "expert baseline: spiking DeltaNet seed",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.718,
+   "1": 72.592,
+   "2": 71.089
+  }
+ },
+ {
+  "id": "e41-anngate",
+  "role": "E41 champion ablation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.334,
+   "1": 71.525
+  }
+ },
+ {
+  "id": "e41-pre",
+  "role": "E41 champion ablation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 69.541,
+   "1": 69.591
+  }
+ },
+ {
+  "id": "e41-selfin",
+  "role": "E41 champion ablation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.239,
+   "1": 70.958
+  }
+ },
+ {
+  "id": "e33-2sig",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 74.135
+  }
+ },
+ {
+  "id": "e33-abs",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 69.834,
+   "1": 69.574
+  }
+ },
+ {
+  "id": "e33-tanh",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.021,
+   "1": 70.307
+  }
+ },
+ {
+  "id": "e35-silu",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.751
+  }
+ },
+ {
+  "id": "e35-softclip",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 68.476,
+   "1": 68.965,
+   "2": 70.173
+  }
+ },
+ {
+  "id": "e36-onepg",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.535,
+   "1": 71.044
+  }
+ },
+ {
+  "id": "e36-sigm05",
+  "role": "E33/E35/E36 gate-activation variant",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 72.876,
+   "1": 72.725
+  }
+ },
+ {
+  "id": "ctl-deltanet-pm",
+  "role": "same-parameter control (widened DeltaNet)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.749,
+   "1": 71.145,
+   "2": 70.319
+  }
+ },
+ {
+  "id": "ctl-deltanet-usegate",
+  "role": "same-parameter control (DeltaNet use_gate)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.328,
+   "1": 70.535,
+   "2": 71.108
+  }
+ },
+ {
+  "id": "r01e40l-cabf9f",
+  "role": "E40 delivered (L_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.279,
+   "1": 70.542,
+   "2": 70.071
+  }
+ },
+ {
+  "id": "r04e40l-a64819",
+  "role": "E40 delivered (L_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.665,
+   "1": 70.535,
+   "2": 72.167
+  }
+ },
+ {
+  "id": "r03e40l-1fc3a4",
+  "role": "E40 delivered (L_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.792,
+   "1": 70.866,
+   "2": 71.087
+  }
+ },
+ {
+  "id": "r04e40l-93af64",
+  "role": "E40 delivered (L_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 69.985,
+   "1": 69.837,
+   "2": 69.536
+  }
+ },
+ {
+  "id": "r02e40l-d28f3c",
+  "role": "E40 delivered (L_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.425,
+   "1": 70.677,
+   "2": 71.532
+  }
+ },
+ {
+  "id": "r01e40l-b09a30",
+  "role": "E40 delivered (L_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 72.822,
+   "1": 72.339,
+   "2": 72.301
+  }
+ },
+ {
+  "id": "r04e40o-efdbf1",
+  "role": "E40 delivered (O_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 75.336,
+   "1": 75.612,
+   "2": 75.409
+  }
+ },
+ {
+  "id": "r01e40o-3ca7d0",
+  "role": "E40 delivered (O_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 72.493,
+   "1": 72.617,
+   "2": 73.448
+  }
+ },
+ {
+  "id": "r02e40o-e29320",
+  "role": "E45 counterfactual pick (O_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.254,
+   "1": 70.231
+  }
+ },
+ {
+  "id": "r01e40o-5d1f00",
+  "role": "E45 counterfactual pick (O_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.844,
+   "1": 70.76
+  }
+ },
+ {
+  "id": "r02e40o-ab2506",
+  "role": "E40 delivered (O_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.945,
+   "1": 71.963,
+   "2": 71.885
+  }
+ },
+ {
+  "id": "r04e40o-fea170",
+  "role": "E40 delivered (O_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.833,
+   "1": 70.537,
+   "2": 70.567
+  }
+ },
+ {
+  "id": "r02e40o-68c7ec",
+  "role": "E45 counterfactual pick (O_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 109.645,
+   "1": 114.682
+  }
+ },
+ {
+  "id": "r01e40o-b1f407",
+  "role": "E40 delivered (O_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.279,
+   "1": 71.463,
+   "2": 71.235
+  }
+ },
+ {
+  "id": "r01e40o-3e33ab",
+  "role": "E40 delivered (O_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.49,
+   "1": 70.626,
+   "2": 71.63
+  }
+ },
+ {
+  "id": "r04e40o-0a22e9",
+  "role": "E45 counterfactual pick (O_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 82.056,
+   "1": 82.236
+  }
+ },
+ {
+  "id": "r04e40v-d50e6b",
+  "role": "E40 delivered (V_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.415,
+   "1": 71.348,
+   "2": 71.35
+  }
+ },
+ {
+  "id": "r01e40v-5813ad",
+  "role": "E40 delivered (V_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.41,
+   "1": 70.35,
+   "2": 70.38
+  }
+ },
+ {
+  "id": "r01e40v-2e9cf4",
+  "role": "E45 counterfactual pick (V_s1)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 114.544,
+   "1": 123.969
+  }
+ },
+ {
+  "id": "r03e40v-80b18b",
+  "role": "E40 delivered (V_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 72.006,
+   "1": 70.987,
+   "2": 71.047
+  }
+ },
+ {
+  "id": "r02e40v-616821",
+  "role": "E40 delivered (V_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 114.544,
+   "1": 123.85,
+   "2": 71.99
+  }
+ },
+ {
+  "id": "r02e40v-5ae8cf",
+  "role": "E45 counterfactual pick (V_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.876,
+   "1": 71.463
+  }
+ },
+ {
+  "id": "r04e40v-49b52f",
+  "role": "E45 counterfactual pick (V_s2)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 71.696,
+   "1": 71.404
+  }
+ },
+ {
+  "id": "r03e40v-a124a3",
+  "role": "E40 delivered (V_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 81.576,
+   "1": 81.092,
+   "2": 81.72
+  }
+ },
+ {
+  "id": "r01e40v-251594",
+  "role": "E40 delivered (V_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 114.544,
+   "1": 123.969,
+   "2": 87.894
+  }
+ },
+ {
+  "id": "r04e40v-152ab7",
+  "role": "E45 counterfactual pick (V_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 74.993,
+   "1": 76.803
+  }
+ },
+ {
+  "id": "r03e40v-a3b2b3",
+  "role": "E45 counterfactual pick (V_s3)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 72.822,
+   "1": 73.406
+  }
+ },
+ {
+  "id": "r05a-ff1061",
+  "role": "gallery: state-gated DeltaNet (E10 arm A search, no agent team)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 70.361,
+   "1": 70.497,
+   "2": 70.341
+  }
+ },
+ {
+  "id": "e34-rec-ffc28c",
+  "role": "gallery: champion + ELU+1 features (closed-loop generation, E34)",
+  "epoch30_best_val_ppl_by_seed": {
+   "0": 68.897,
+   "1": 69.274,
+   "2": 69.126
+  }
+ }
+]

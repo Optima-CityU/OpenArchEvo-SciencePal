@@ -1,0 +1,33 @@
+{
+ "id": "r04e40l-93af64",
+ "protocol": "cpu-fp-bptt-s128-b4-st256 (OpenArchEvo behavioural fingerprint, CPU)",
+ "features": {
+  "zcp_synflow": 124.02179498631665,
+  "zcp_gradnorm": 2.1699542888107275,
+  "zcp_snip": 19.37225284113083,
+  "zcp_jacob_cov": 1.670026421546936,
+  "zcp_naswot": 3.500789165496826,
+  "zcp_swap": 16.0,
+  "zcp_fire_rate": 0.1468791961669922,
+  "arch_total_params": 128928.0,
+  "arch_depth_proxy": 6.0,
+  "arch_num_spiking_linear": 6.0,
+  "arch_num_conv1d": 3.0,
+  "arch_gate_layer_ratio": 0.0,
+  "arch_num_expand": 1.0,
+  "arch_num_contract": 2.0,
+  "arch_bottleneck_ratio": 0.75,
+  "arch_max_expand_ratio": 2.0,
+  "arch_avg_ffn_expansion": 2.0,
+  "arch_ffn_param_ratio": 0.511293124844835,
+  "arch_ffn_macs_ratio": 0.5161290322580644,
+  "arch_macs_per_param": 252.12410027300106,
+  "arch_largest_subgraph_ratio": 1.0
+ },
+ "measured_2epoch_val_ppl": 82.185,
+ "epoch30_best_val_ppl_by_seed": {
+  "0": 69.985,
+  "1": 69.837,
+  "2": 69.536
+ }
+}

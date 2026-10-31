@@ -1,0 +1,121 @@
+{
+ "tag": "glm53",
+ "model_requested": "zai/glm-5.3",
+ "status": "completed",
+ "elapsed": 628.7,
+ "model_reported": "zai/glm-5.3",
+ "tokens": 1926403,
+ "output": {
+  "works": [
+   {
+    "title": "Gated Linear Attention Transformers with Hardware-Efficient Training",
+    "first_author": "Songlin Yang",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.06635 (ICML 2024)",
+    "url": "https://arxiv.org/abs/2312.06635",
+    "relation": "contradicts",
+    "note": "Shows data-dependent gating makes linear attention competitive with softmax attention and Mamba at 340M/1.3B scale trained on 15B/100B tokens, i.e. gates help at convergence, though its gate modulates the recurrent state rather than the block output."
+   },
+   {
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "first_author": "Songlin Yang",
+    "year": 2024,
+    "id_or_venue": "arXiv:2412.06464 (ICLR 2025)",
+    "url": "https://arxiv.org/abs/2412.06464",
+    "relation": "contradicts",
+    "note": "Shows gating combined with the delta rule consistently surpasses plain DeltaNet and Mamba2 across language-modeling and retrieval benchmarks at full training, directly contradicting the finding's 30-epoch reversal where the gated DeltaNet ends 1.7 PPL worse."
+   },
+   {
+    "title": "Gated Slot Attention for Efficient Linear-Time Sequence Modeling",
+    "first_author": "Yu Zhang",
+    "year": 2024,
+    "id_or_venue": "arXiv:2409.07146 (NeurIPS 2024)",
+    "url": "https://arxiv.org/abs/2409.07146",
+    "relation": "contradicts",
+    "note": "Shows adding a GLA-inspired gating mechanism to a linear-attention memory improves language modeling by a large margin over the ungated ABC baseline, arguing gates help final quality."
+   },
+   {
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "first_author": "Albert Gu",
+    "year": 2023,
+    "id_or_venue": "arXiv:2312.00752 (COLM 2024)",
+    "url": "https://arxiv.org/abs/2312.00752",
+    "relation": "contradicts",
+    "note": "Identifies input-dependent selective gates as the key mechanism that lets SSMs match Transformers on language at convergence, contradicting convergence-time harm from input-dependent gating."
+   },
+   {
+    "title": "GLU Variants Improve Transformer",
+    "first_author": "Noam Shazeer",
+    "year": 2020,
+    "id_or_venue": "arXiv:2002.05202",
+    "url": "https://arxiv.org/abs/2002.05202",
+    "relation": "contradicts",
+    "note": "Shows sigmoid-style multiplicative gating (SwiGLU etc.) improves final quality over ReLU/GELU FFNs at matched parameter counts in fully trained T5 models, though it tests FFN gating rather than attention-output gating."
+   },
+   {
+    "title": "Language Modeling with Gated Convolutional Networks",
+    "first_author": "Yann Dauphin",
+    "year": 2016,
+    "id_or_venue": "arXiv:1612.08083 (ICML 2017)",
+    "url": "https://arxiv.org/abs/1612.08083",
+    "relation": "supports",
+    "note": "Shows gated linear units reach higher accuracy and converge faster than LSTM-style gating thanks to a gradient path without downscaling, direct evidence that multiplicative gating accelerates early training as in the finding."
+   },
+   {
+    "title": "Efficient Global Neural Architecture Search",
+    "first_author": "Shahid Siddiqui",
+    "year": 2023,
+    "id_or_venue": "arXiv:2502.03553 (CAIP 2023)",
+    "url": "https://arxiv.org/abs/2502.03553",
+    "relation": "supports",
+    "note": "Measures Spearman rank correlation of only ~0.65 between 1-epoch and 50-epoch validation accuracy across 240 sampled architectures, quantifying that short-training rankings mis-rank candidates exactly as the finding concludes."
+   },
+   {
+    "title": "NAS evaluation is frustratingly hard",
+    "first_author": "Antoine Yang",
+    "year": 2019,
+    "id_or_venue": "arXiv:1912.12522 (ICLR 2020)",
+    "url": "https://arxiv.org/abs/1912.12522",
+    "relation": "supports",
+    "note": "Shows architecture and method rankings shift with training budgets and comparison protocols, so conclusions drawn at low budgets are unreliable and need matching-budget controls."
+   },
+   {
+    "title": "Neural Architecture Search: A Survey",
+    "first_author": "Thomas Elsken",
+    "year": 2019,
+    "id_or_venue": "JMLR 20(55)",
+    "url": "https://www.jmlr.org/papers/volume20/18-598/18-598.pdf",
+    "relation": "supports",
+    "note": "Documents that low-fidelity performance estimates (shorter training, smaller data) bias evaluation and that relative rankings can change dramatically when the fidelity gap to full evaluation is large, motivating gradual fidelity increases."
+   },
+   {
+    "title": "Understanding and Robustifying Differentiable Architecture Search",
+    "first_author": "Arber Zela",
+    "year": 2020,
+    "id_or_venue": "ICLR 2020",
+    "url": "https://iclr.cc/virtual_2020/poster_H1gDNyrKDS.html",
+    "relation": "supports",
+    "note": "Shows low search-phase validation loss can coincide with sharply curved minima and poor final test performance, and that regularization restores generalization, an early-win/late-loss pattern matching the gate's overfitting."
+   },
+   {
+    "title": "Learning Transferable Architectures for Scalable Image Recognition",
+    "first_author": "Barret Zoph",
+    "year": 2018,
+    "id_or_venue": "CVPR 2018 (arXiv:1707.07012)",
+    "url": "https://arxiv.org/abs/1707.07012",
+    "relation": "qualifies",
+    "note": "Establishes the proxy-search paradigm (fewer epochs, smaller data) whose transferred NASNet cells still achieved state of the art, showing short-fidelity search can work even though rankings are not generally preserved."
+   },
+   {
+    "title": "SpikeGPT: Generative Pre-trained Language Model with Spiking Neural Networks",
+    "first_author": "Rui-Jie Zhu",
+    "year": 2023,
+    "id_or_venue": "arXiv:2302.13939 (TMLR)",
+    "url": "https://arxiv.org/abs/2302.13939",
+    "relation": "qualifies",
+    "note": "Shows RWKV-style gated recurrence in a directly trained spiking language model stays competitive with non-spiking baselines, evidence gating is viable in SNN LMs, but it reports no epoch-wise or DeltaNet comparison."
+   }
+  ],
+  "summary": "Gate benefits at convergence are well attested in non-spiking linear attention (GLA, Gated DeltaNet, GSA, Mamba, GLU variants), so the 30-epoch reversal is unexpected against that literature. But gated units are also known to converge faster (Dauphin), and the NAS literature firmly documents short-training rankings diverging from full-training rankings (Spearman ~0.65 at 1 epoch; Zela; Elsken; Yang). The crossover in a spiking model, with training PPL staying lower, is a novel small-scale confirmation that 2-epoch evolutionary proxies reward fast early learners. Overall the conclusion is expected; the specific spiking-DeltaNet crossover point is the new evidence, and multi-fidelity confirmation is the right remedy."
+ }
+}

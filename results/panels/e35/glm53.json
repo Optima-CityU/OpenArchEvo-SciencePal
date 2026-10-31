@@ -1,0 +1,31 @@
+{
+ "tag": "glm53",
+ "model_requested": "zai/glm-5.3",
+ "status": "completed",
+ "elapsed": 263.1,
+ "model_reported": "zai/glm-5.3",
+ "tokens": 775509,
+ "output": {
+  "analysis": "Sigmoid gate fits training harder but generalizes worse: train PPL 37.27 vs identity 40.62 at ep30, yet val 73.54 vs 69.02. Early (ep1-15) sigmoid val is better (d_val +2.84@ep5, +2.64@ep10), but identity overtakes late (d_val -4.71@ep28, -4.52@ep30). No-gate DeltaNet: train 46.02, val 71.81. So sigmoid adds capacity that overfits; identity's unbounded real gate generalizes.",
+  "hypothesis": "The sigmoid gate bounds the output modulation to (0,1), giving the block extra capacity to fit the training distribution (train 37.27 < identity 40.62) at the cost of generalization (val 73.54 > 69.02). The identity gate keeps the raw unbounded, sign-preserving real gate, which is a milder, lower-capacity modulation that regularizes the block and generalizes better. Removing the sigmoid removes a capacity-adding nonlinearity that the 2-epoch proxy rewards but 30-epoch generalization punishes.",
+  "predictions": {
+   "2sig": [
+    70.8,
+    1.0
+   ],
+   "tanh": [
+    72.8,
+    1.0
+   ],
+   "abs": [
+    69.6,
+    0.8
+   ]
+  },
+  "new_variant": {
+   "expr": "g * torch.sigmoid(g)",
+   "rationale": "Keeps the unbounded, sign-preserving real gate (like identity, which generalizes best) while softly attenuating large negative gate values toward 0, adding a mild regularizer without bounding the positive range. This reduces the overfitting capacity that bounded gates (sigmoid/tanh) introduce, so it should beat the identity champion.",
+   "predicted_ppl": 68.3
+  }
+ }
+}

@@ -1,0 +1,1 @@
+New lab session. Ignore the earlier short test messages in this conversation (they were API connectivity tests). Read the instructions in /workspace/lab/TASK.md and follow them exactly, unattended, without asking questions.

@@ -1,0 +1,42 @@
+{
+ "tag": "gpt61",
+ "model_requested": "codex/gpt-6.1-sol-high",
+ "status": "completed",
+ "elapsed": 691.2,
+ "model_reported": "codex/gpt-6.1-sol-high",
+ "tokens": 2704533,
+ "output": {
+  "analysis": "Across 17 architectures, epoch-2 validation PPL has Spearman rho 0.352 and 53 discordant pairs among 135 untied-target pairs. r07v1-844c55 ranks first early (117.11) but tenth finally (77.04); r12a-8ed893 ranks third early (117.55) but fifteenth finally (85.67). The negative log(train2/val2) headroom proxy reaches rho 0.492; combining it with log(val2) reaches 0.652 and 36 discordances. Train PPL is a dropout-on running average, so the gap mixes optimization lag and dropout sensitivity, not endpoint generalization. Fixed-formula deletion rhos span 0.592–0.728. Formula selection used these labels; gains need held-out confirmation. Expected test rho 0.45 is subjective, not measured.",
+  "hypothesis": "At a fixed epoch-2 endpoint validation loss, a larger log(train2/val2) gap marks slower optimization and/or dropout robustness with more recoverable learning headroom. Subtracting this gap from endpoint validation loss should improve 30-epoch ranking on the held-out architectures; failure to beat val2 alone falsifies its predictive consequence.",
+  "formula": "score = ln(val_ppl_ep2) - ln(train_ppl_ep2 / val_ppl_ep2) = 2*ln(val_ppl_ep2) - ln(train_ppl_ep2); lower is better. Equivalent ordering: val_ppl_ep2**2 / train_ppl_ep2. No fitted coefficients; code deliberately unused.",
+  "fitted_constants": 0,
+  "train_rho": 0.6523606376382293,
+  "expected_test_rho": 0.45,
+  "test_ranking": [
+   "r14a-d60a72",
+   "r09v1-673a31",
+   "r14a-acc9a5",
+   "r03a5-b5331e",
+   "r13v2-c0de0b",
+   "r03v2nk-a7e01d",
+   "r05a-cac0f0",
+   "r06v2-5fbf90",
+   "r08a-fb7725",
+   "r03a-41565f",
+   "r12v2-d688f2",
+   "r13v2-404945",
+   "r05a-c05337",
+   "r16v1-9c505f",
+   "r14v1-545f8a",
+   "r11v1-0220f7",
+   "r02a5-7e4ed8",
+   "r09a-22a7de",
+   "r02a5-e8882f",
+   "r06v1-c7c3fe",
+   "r10a-7897ed"
+  ]
+ },
+ "files": {
+  "predictor.py": "\"\"\"Parameter-free rank predictor from the two-epoch run.\n\nLower scores predict better 30-epoch validation PPL. The score is in log\nunits and is not a calibrated prediction of the final perplexity.\n\nMechanistic hypothesis: conditional on endpoint validation loss, a larger\nrunning-train/endpoint-validation loss gap indicates optimization headroom\nand/or robustness to dropout, predicting better longer-run performance.\nThis is an association to test, not an established causal explanation.\n\nOnly train_ppl_ep2 and val_ppl_ep2 are accessed. The program source, architecture\nID, epoch-30 labels, other rows, and filesystem are deliberately unused. Training\nPPL is a dropout-on epoch average, not an endpoint training-set measurement.\n\"\"\"\nimport math\n\n\ndef score(row: dict, code: str) -> float:\n    \"\"\"Return log(val2) minus the log(train2/val2) headroom proxy.\"\"\"\n    train2 = float(row['train_ppl_ep2'])\n    val2 = float(row['val_ppl_ep2'])\n    if not (math.isfinite(train2) and math.isfinite(val2)\n            and train2 > 0.0 and val2 > 0.0):\n        raise ValueError('Epoch-2 perplexities must be finite and positive.')\n    return 2.0 * math.log(val2) - math.log(train2)\n"
+ }
+}

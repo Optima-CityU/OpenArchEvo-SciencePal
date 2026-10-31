@@ -1,0 +1,13 @@
+New task (ignore all earlier tasks in this conversation). You are a research scientist. Work unattended in {wd}/ and
+never ask questions. Read README.md, analyse curves.csv with Python, and read r02a-e29092.py (only the gate part matters).
+
+1. Explain, with numbers from the curves, how the sigmoid gate and the identity gate differ over training.
+2. Give ONE falsifiable mechanistic hypothesis for why removing the sigmoid helps so much at 30 epochs.
+3. Predict the 30-epoch val PPL (seed 0) of the three queued variants: 2*sigmoid(g), tanh(g), abs(g). Give a number and
+   a +/- range for each, derived from your hypothesis.
+4. Propose ONE new gate activation (a single-line change of the gate after o_proj; same parameter count) that your
+   hypothesis says should beat 68.95, as a Python expression of `g` (e.g. "g * torch.sigmoid(g)"), with a predicted PPL.
+
+Write {wd}/out.json: {{"analysis": "<= 120 words with numbers", "hypothesis": str,
+"predictions": {{"2sig": [ppl, range], "tanh": [ppl, range], "abs": [ppl, range]}},
+"new_variant": {{"expr": str, "rationale": str, "predicted_ppl": number}}}}. Print DONE when out.json exists.

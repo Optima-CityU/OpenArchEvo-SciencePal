@@ -1,0 +1,12 @@
+{
+ "tag": "glm53",
+ "model_requested": "zai/glm-5.3",
+ "status": "completed",
+ "elapsed": 504.7,
+ "model_reported": "zai/glm-5.3",
+ "tokens": 2214346,
+ "fetch_errors": {
+  "out.json": "Client error '404 Not Found' for url 'https://sciencepal.ai/api/sandboxes/<REDACTED>/files/con",
+  "analysis.py": "Client error '404 Not Found' for url 'https://sciencepal.ai/api/sandboxes/<REDACTED>/files/con"
+ }
+}

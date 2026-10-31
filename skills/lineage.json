@@ -1,0 +1,339 @@
+{
+ "benchmarks": {
+  "E4_ladder": "Skill ladder, fixed plan of 24 CPU-checked proposals x 4 repetitions (DeepSeek proposer reading SKILL.md as system prompt). first_try_pass = feasibility on first attempt, honesty = no functional duplicate / contract violation; 90% Wilson intervals.",
+  "fixed_cpu_benchmark": "E15/E19/E27/E43: 6 expert seeds x 3 roles x 8 proposals = 24 proposals x 2 repetitions; DeepSeek-V4-Flash writes code, controller CPU-checks it, every accepted child is functionally-equivalence-tested against its base parent. distinct_new = number of functional-equivalence classes (merged across both repetitions of the same (role, parent) task) not equivalent to the parent. Baseline re-run in every round.",
+  "promotion_rules": {
+   "E15": "most effective-new, >= baseline + 3, first-try pass not lower by > 5 pp",
+   "E19": "distinct_new >= baseline + 3 and first-try pass not lower by > 5 pp",
+   "E27": "no regression: first-try pass not lower by > 5 pp and distinct_new not lower",
+   "E43": "first-try pass drop <= 5 pp and distinct_new drop <= 3; among those, highest distinct_new"
+  }
+ },
+ "versions": [
+  {
+   "version": "0.1.0",
+   "path": "v0.1/SKILL.md",
+   "date": "2026-10-21",
+   "proposed_by": "project authors",
+   "parent": null,
+   "change": "first SciencePal Skill: spiking contract, roles (explore/recombine/simplify), CPU check, parent library",
+   "benchmark": {
+    "E4_ladder": {
+     "proposals": 85,
+     "first_try_pass": 0.67,
+     "ci90": [
+      0.587,
+      0.744
+     ],
+     "honesty": 0.847,
+     "repairs": 52
+    }
+   },
+   "verdict": "promoted (initial)"
+  },
+  {
+   "version": "0.2.0",
+   "path": "v0.2/SKILL.md",
+   "date": "2026-10-21",
+   "proposed_by": "SciencePal agent (implementation checklist distilled from the first night's failure logs)",
+   "parent": "0.1.0",
+   "change": "implementation checklist; spiking-contract audit after an analog-MLP candidate won on PPL",
+   "benchmark": {
+    "E4_ladder": {
+     "proposals": 90,
+     "first_try_pass": 0.737,
+     "ci90": [
+      0.657,
+      0.804
+     ],
+     "honesty": 0.856,
+     "repairs": 35
+    }
+   },
+   "verdict": "promoted"
+  },
+  {
+   "version": "0.3.2",
+   "path": null,
+   "date": "2026-10-21",
+   "proposed_by": "project authors, from two simulated-judge trials run by SciencePal agents",
+   "parent": "0.2.0",
+   "change": "functional-equivalence test (0.3.0), demo mode and case studies, judge-trial fixes (0.3.1-0.3.2)",
+   "benchmark": {
+    "E4_ladder": {
+     "proposals": 90,
+     "first_try_pass": 0.766,
+     "ci90": [
+      0.687,
+      0.83
+     ],
+     "honesty": 0.956,
+     "repairs": 31
+    }
+   },
+   "verdict": "promoted; honesty gain 0.86 -> 0.96 is the only ladder step outside noise",
+   "note": "text superseded by 0.3.3 (same proposer instructions)"
+  },
+  {
+   "version": "0.3.3",
+   "path": "v0.3.3/SKILL.md",
+   "date": "2026-10-22",
+   "proposed_by": "project authors",
+   "parent": "0.3.2",
+   "change": "case studies updated with multi-fidelity results and Skill-ladder numbers; SKILL instructions unchanged",
+   "benchmark": {
+    "E15_baseline": {
+     "first_try_pass": "31/48 (65%)",
+     "accepted": 48,
+     "equivalent_to_parent": "9/48 (19%)",
+     "effective_new": 39,
+     "repairs": 20
+    }
+   },
+   "verdict": "promoted (baseline for arms A/V2 and for round 2)"
+  },
+  {
+   "version": "0.3.4",
+   "path": "v0.3.4/SKILL.md",
+   "date": "2026-10-25",
+   "proposed_by": "project authors",
+   "parent": "0.3.3",
+   "change": "demo-only modes D/E (replay a real generation; recompute v1-vs-v2 evidence); proposer instructions identical to 0.3.3",
+   "benchmark": null,
+   "verdict": "demo release; experiments keep 0.3.3"
+  },
+  {
+   "version": "0.4.0",
+   "path": "v0.4.0/SKILL.md",
+   "date": "2026-10-22",
+   "proposed_by": "SciencePal agent (codex/gpt-6-astra), round 1 of agent-driven Skill evolution",
+   "parent": "0.3.2",
+   "evidence_given": "ladder evidence.json (90 parameter-prediction rows, failure stages); see v0.4.0/CHANGES.md and ../prompts/skill_evo/round1_v04_prompt.md",
+   "change": "concrete parameter-estimation procedure + 3 checklist items; self back-test claimed 71/90 correct",
+   "benchmark": {
+    "E4_ladder": {
+     "proposals": 85,
+     "first_try_pass": 0.653,
+     "ci90": [
+      0.569,
+      0.728
+     ],
+     "honesty": 0.953,
+     "repairs": 46,
+     "param_direction_accuracy": 0.37
+    }
+   },
+   "verdict": "rejected: first-try pass 65% vs 77% for 0.3.2, repairs 46 vs 31; self-reported improvement not confirmed"
+  },
+  {
+   "version": "0.5.0",
+   "path": "v0.5.0/SKILL.md",
+   "date": "2026-10-25",
+   "proposed_by": "SciencePal agent, DeepSeek-V4-Flash (E15 round 2; 4 of 5 models delivered)",
+   "parent": "0.3.3",
+   "evidence_given": "proposal fate (60% of arm-A proposals duplicate or behaviour-identical to parent), CPU failure stages, 4 real behaviour-identical examples; ../prompts/skill_evo/round2/evidence.md",
+   "change": "live computation path declared before coding (step 2b) and required; functional equivalence = hard failure; checklist items 13-14",
+   "benchmark": {
+    "E15": {
+     "first_try_pass": "30/47 (64%)",
+     "accepted": 44,
+     "equivalent_to_parent": "1/44 (2%)",
+     "effective_new": 43,
+     "repairs": 26,
+     "baseline_v0.3.3_effective_new": 39
+    }
+   },
+   "verdict": "promoted (E15). Four models independently proposed the same live-path fix."
+  },
+  {
+   "version": "0.6.0 x 6",
+   "path": "candidates/v0.6.0_round3/",
+   "date": "2026-10-26",
+   "proposed_by": "SciencePal agents: DeepSeek-V4-Flash, GLM-5.3 (x2, one silently served by Flash), Kimi K3, DeepSeek-V4-Pro (served by Flash), GPT-6.1",
+   "parent": "0.5.0",
+   "evidence_given": "v0.5.0 inside the GPU loop (arm A5): rejection reasons, CPU failure stages, near-duplicate examples; ../prompts/skill_evo/round3/evidence.md",
+   "benchmark": {
+    "E19": {
+     "baseline_v0.5": {
+      "first_try_pass": "33/47 (70%)",
+      "effective_new": 41,
+      "distinct_new": 34,
+      "repairs": 18
+     },
+     "dsv4flash": {
+      "first_try_pass": "26/47 (55%)",
+      "effective_new": 41,
+      "distinct_new": 37,
+      "repairs": 28
+     },
+     "glm53b": {
+      "first_try_pass": "40/47 (85%)",
+      "effective_new": 41,
+      "distinct_new": 36,
+      "repairs": 11
+     },
+     "kimik3b": {
+      "first_try_pass": "31/47 (66%)",
+      "effective_new": 41,
+      "distinct_new": 35,
+      "repairs": 21
+     },
+     "dsv4pro (served by Flash)": {
+      "first_try_pass": "25/48 (52%)",
+      "effective_new": 41,
+      "distinct_new": 34,
+      "repairs": 32
+     },
+     "gpt61": {
+      "first_try_pass": "32/47 (68%)",
+      "effective_new": 39,
+      "distinct_new": 32,
+      "repairs": 17
+     },
+     "glm53 (served by Flash)": {
+      "first_try_pass": "38/47 (81%)",
+      "effective_new": 38,
+      "distinct_new": 30,
+      "repairs": 16
+     }
+    }
+   },
+   "verdict": "all 6 rejected; v0.5 kept (Flash +3 distinct_new but -15 pp first-try pass)"
+  },
+  {
+   "version": "0.5.1",
+   "path": "v0.5.1/SKILL.md",
+   "date": "2026-10-29",
+   "proposed_by": "experience cards C1-C6 distilled from GPU experiments E12/E18/E20/E21/E24 (GPU evidence flowing back into the Skill)",
+   "parent": "0.5.0",
+   "benchmark": {
+    "E27": {
+     "baseline_v0.5": {
+      "first_try_pass": "36/48 (75.0%)",
+      "effective_new": 43,
+      "distinct_new": 37,
+      "equivalent_to_parent": "3/46",
+      "repairs": 17
+     },
+     "v0.5.1": {
+      "first_try_pass": "33/47 (70.2%)",
+      "effective_new": 45,
+      "distinct_new": 40,
+      "equivalent_to_parent": "2/47",
+      "repairs": 19
+     }
+    }
+   },
+   "verdict": "promoted (no regression); Skill used by all E40 arms"
+  },
+  {
+   "version": "0.7.0",
+   "path": "v0.7.0/SKILL.md",
+   "date": "2026-10-30",
+   "proposed_by": "SciencePal agent, GPT-6.1 (E43 round 4; 5 models)",
+   "parent": "0.5.1",
+   "evidence_given": "v0.5.1 plus new GPU evidence of 10/29-10/30 (gate activations, OAF, long-training results); ../prompts/skill_evo/round4/evidence.md",
+   "change": "updated C1-C6; scoped cards C7 (gate activation outcomes as explained failures), C8, C9 (OAF as proxy evidence, not selection authority); separate measured vs unverified explanations",
+   "benchmark": {
+    "E43": {
+     "baseline_v0.5.1": {
+      "first_try_pass": "38/48 (79%)",
+      "accepted": 45,
+      "repairs": 15,
+      "distinct_new": 32,
+      "effective_new": 36
+     },
+     "gpt61": {
+      "first_try_pass": "37/47 (79%)",
+      "accepted": 46,
+      "repairs": 13,
+      "distinct_new": 42,
+      "effective_new": 46
+     },
+     "glm53": {
+      "first_try_pass": "36/48 (75%)",
+      "accepted": 45,
+      "repairs": 17,
+      "distinct_new": 40,
+      "effective_new": 45
+     },
+     "kimik3": {
+      "first_try_pass": "33/47 (70%)",
+      "accepted": 43,
+      "repairs": 18,
+      "distinct_new": 38,
+      "effective_new": 43
+     },
+     "dsv4flash": {
+      "first_try_pass": "36/47 (77%)",
+      "accepted": 45,
+      "repairs": 16,
+      "distinct_new": 36,
+      "effective_new": 44
+     },
+     "dsv4pro": {
+      "first_try_pass": "33/47 (70%)",
+      "accepted": 41,
+      "repairs": 24,
+      "distinct_new": 31,
+      "effective_new": 40
+     }
+    }
+   },
+   "verdict": "GPT-6.1 candidate promoted to v0.7.0 (current); Kimi K3 and DeepSeek-V4-Pro rejected (-9 pp first-try pass); GLM-5.3 and Flash eligible but lower distinct_new",
+   "note": "one card (C5) corrected after an E44 re-analysis; the unmodified candidate is in candidates/v0.7.0_round4/gpt61"
+  }
+ ],
+ "rejected_candidates_in_repo": {
+  "round2 (v0.5.0)": [
+   "candidates/v0.5.0_round2/glm53",
+   "candidates/v0.5.0_round2/gpt61",
+   "candidates/v0.5.0_round2/kimik3"
+  ],
+  "round3 (v0.6.0)": [
+   "candidates/v0.6.0_round3/dsv4flash",
+   "candidates/v0.6.0_round3/dsv4pro",
+   "candidates/v0.6.0_round3/glm53",
+   "candidates/v0.6.0_round3/glm53b",
+   "candidates/v0.6.0_round3/gpt61",
+   "candidates/v0.6.0_round3/kimik3b"
+  ],
+  "round4 (v0.7.0)": [
+   "candidates/v0.7.0_round4/dsv4flash",
+   "candidates/v0.7.0_round4/dsv4pro",
+   "candidates/v0.7.0_round4/glm53",
+   "candidates/v0.7.0_round4/kimik3"
+  ]
+ },
+ "E15_round2_candidates": {
+  "dsv4flash (promoted)": {
+   "first_try_pass": "30/47 (64%)",
+   "accepted": 44,
+   "equivalent_to_parent": "1/44",
+   "effective_new": 43,
+   "repairs": 26
+  },
+  "glm53": {
+   "first_try_pass": "37/47 (79%)",
+   "accepted": 42,
+   "equivalent_to_parent": "2/42",
+   "effective_new": 40,
+   "repairs": 17
+  },
+  "gpt61": {
+   "first_try_pass": "30/48 (62%)",
+   "accepted": 40,
+   "equivalent_to_parent": "3/40",
+   "effective_new": 37,
+   "repairs": 30
+  },
+  "kimik3": {
+   "first_try_pass": "30/48 (62%)",
+   "accepted": 45,
+   "equivalent_to_parent": "4/45",
+   "effective_new": 41,
+   "repairs": 23
+  },
+  "dsv4pro": "no file delivered (run failed)"
+ }
+}

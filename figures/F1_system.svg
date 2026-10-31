@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5f5e5a"/>
+    </marker>
+    <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2a78d6"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <text x="40" y="52" font-size="28" font-weight="700" fill="#1f1f1d">众智提出，演化择优</text>
+  <text x="40" y="82" font-size="16" fill="#5f5e5a">Agents propose, evolution decides — OpenArchEvo with co-evolving agents, Skills and evaluation rules on SciencePal</text>
+
+  <!-- central evolution loop -->
+  <g>
+    <rect x="390" y="150" width="420" height="300" rx="18" fill="#f7f6f2" stroke="#d9d8d2"/>
+    <text x="600" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#1f1f1d">Evolution loop (OpenArchEvo)</text>
+    <g font-size="13.5" fill="#1f1f1d" text-anchor="middle">
+      <rect x="420" y="205" width="160" height="44" rx="10" fill="#fff" stroke="#c9c8c2"/><text x="500" y="232">① Propose programs</text>
+      <rect x="620" y="205" width="160" height="44" rx="10" fill="#fff" stroke="#c9c8c2"/><text x="700" y="225">② Gate</text><text x="700" y="242" font-size="11.5" fill="#5f5e5a">contract · causality · len 127</text>
+      <rect x="620" y="285" width="160" height="44" rx="10" fill="#fff" stroke="#c9c8c2"/><text x="700" y="305">③ Score cheaply</text><text x="700" y="322" font-size="11.5" fill="#5f5e5a">2-epoch log → OAF</text>
+      <rect x="420" y="285" width="160" height="44" rx="10" fill="#fff" stroke="#c9c8c2"/><text x="500" y="305">④ Select</text><text x="500" y="322" font-size="11.5" fill="#5f5e5a">NSGA-II · islands · novelty</text>
+      <rect x="470" y="365" width="260" height="50" rx="10" fill="#eaf2fc" stroke="#2a78d6"/><text x="600" y="387" font-weight="600">⑤ Decide with long training</text><text x="600" y="404" font-size="11.5" fill="#5f5e5a">30 epochs × seeds · matched controls</text>
+    </g>
+    <path d="M580,227 L618,227" stroke="#5f5e5a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M700,249 L700,283" stroke="#5f5e5a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M620,307 L582,307" stroke="#5f5e5a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M500,329 L540,363" stroke="#5f5e5a" stroke-width="1.6" marker-end="url(#ar)"/>
+    <path d="M470,390 C400,390 400,227 418,227" fill="none" stroke="#5f5e5a" stroke-width="1.6" marker-end="url(#ar)"/>
+  </g>
+
+  <!-- four co-evolving objects -->
+  <g font-size="13" fill="#1f1f1d">
+    <!-- architectures -->
+    <rect x="40" y="130" width="310" height="135" rx="14" fill="#fff" stroke="#2a78d6" stroke-width="1.5"/>
+    <text x="58" y="158" font-size="15" font-weight="700" fill="#2a78d6">Architectures</text>
+    <text x="58" y="182">Proposer agent writes whole spiking</text>
+    <text x="58" y="200">network programs, guided by the Skill</text>
+    <text x="58" y="226" fill="#5f5e5a" font-size="12">Found: 68.95 PPL vs expert 71.8,</text>
+    <text x="58" y="243" fill="#5f5e5a" font-size="12">matched-param control 70.7 (3 seeds)</text>
+    <!-- skills -->
+    <rect x="40" y="295" width="310" height="135" rx="14" fill="#fff" stroke="#1baf7a" stroke-width="1.5"/>
+    <text x="58" y="323" font-size="15" font-weight="700" fill="#14936a">Skills (the agents' tools)</text>
+    <text x="58" y="347">Model panel rewrites the Skill from</text>
+    <text x="58" y="365">failure logs + GPU experience cards</text>
+    <text x="58" y="391" fill="#5f5e5a" font-size="12">Fixed benchmark decides: v0.4 ✗ · v0.5 ✓</text>
+    <text x="58" y="408" fill="#5f5e5a" font-size="12">v0.6 ✗ ×6 · v0.5.1 ✓ · v0.7 (round 4)</text>
+    <!-- hypotheses -->
+    <rect x="850" y="130" width="310" height="135" rx="14" fill="#fff" stroke="#d55181" stroke-width="1.5"/>
+    <text x="868" y="158" font-size="15" font-weight="700" fill="#c13f6f">Scientific hypotheses</text>
+    <text x="868" y="182">Multi-model panel explains failures,</text>
+    <text x="868" y="200">writes interventions and predictions</text>
+    <text x="868" y="226" fill="#5f5e5a" font-size="12">GPU decides: popular hypothesis refuted;</text>
+    <text x="868" y="243" fill="#5f5e5a" font-size="12">4/5-model SiLU gate rejected (71.75)</text>
+    <!-- evaluation rules -->
+    <rect x="850" y="295" width="310" height="135" rx="14" fill="#fff" stroke="#c98500" stroke-width="1.5"/>
+    <text x="868" y="323" font-size="15" font-weight="700" fill="#a86f00">Evaluation rules</text>
+    <text x="868" y="347">Agents design the cheap fitness itself</text>
+    <text x="868" y="365">(blind to the test labels)</text>
+    <text x="868" y="391" fill="#5f5e5a" font-size="12">Prospective test: OAF picks 4/4 better</text>
+    <text x="868" y="408" fill="#5f5e5a" font-size="12">than expert vs 1/4 for 2-epoch score</text>
+  </g>
+  <!-- connectors to loop -->
+  <path d="M350,200 L418,222" stroke="#2a78d6" stroke-width="1.6" marker-end="url(#arb)"/>
+  <path d="M350,360 C390,360 390,250 430,250" fill="none" stroke="#1baf7a" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M850,215 C810,300 800,385 732,390" fill="none" stroke="#d55181" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M850,360 L782,310" stroke="#c98500" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M730,395 C800,450 300,470 195,432" fill="none" stroke="#1baf7a" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="470" y="470" font-size="12" fill="#14936a">evidence → experience cards → next Skill</text>
+
+  <!-- SciencePal band -->
+  <rect x="40" y="510" width="1120" height="150" rx="16" fill="#f7f6f2" stroke="#d9d8d2"/>
+  <text x="62" y="542" font-size="16" font-weight="700" fill="#1f1f1d">SciencePal does the work at every step</text>
+  <g font-size="13" fill="#1f1f1d">
+    <rect x="62" y="560" width="200" height="80" rx="10" fill="#fff" stroke="#c9c8c2"/>
+    <text x="78" y="585" font-weight="600">GPU lab sandboxes</text><text x="78" y="605" font-size="12" fill="#5f5e5a">up to 22 labs, agent-started</text><text x="78" y="622" font-size="12" fill="#5f5e5a">~1,350 trainings, ~1,000 h</text>
+    <rect x="278" y="560" width="200" height="80" rx="10" fill="#fff" stroke="#c9c8c2"/>
+    <text x="294" y="585" font-weight="600">Multi-model panels</text><text x="294" y="605" font-size="12" fill="#5f5e5a">GPT-6.1 · Kimi K3 · GLM-5.3</text><text x="294" y="622" font-size="12" fill="#5f5e5a">DeepSeek-V4 Pro / Flash</text>
+    <rect x="494" y="560" width="200" height="80" rx="10" fill="#fff" stroke="#c9c8c2"/>
+    <text x="510" y="585" font-weight="600">Research-lead agent</text><text x="510" y="605" font-size="12" fill="#5f5e5a">reads the archive each</text><text x="510" y="622" font-size="12" fill="#5f5e5a">generation, sets directions</text>
+    <rect x="710" y="560" width="200" height="80" rx="10" fill="#fff" stroke="#c9c8c2"/>
+    <text x="726" y="585" font-weight="600">Skill hosting</text><text x="726" y="605" font-size="12" fill="#5f5e5a">proposer Skill imported,</text><text x="726" y="622" font-size="12" fill="#5f5e5a">versioned, runnable by judges</text>
+    <rect x="926" y="560" width="214" height="80" rx="10" fill="#fff" stroke="#c9c8c2"/>
+    <text x="942" y="585" font-weight="600">Independent reviewers</text><text x="942" y="605" font-size="12" fill="#5f5e5a">models re-analyse raw logs;</text><text x="942" y="622" font-size="12" fill="#5f5e5a">found duplicates, log defects</text>
+  </g>
+</svg>

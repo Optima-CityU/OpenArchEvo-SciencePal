@@ -1,0 +1,42 @@
+{
+ "tag": "dsv4flash",
+ "model_requested": null,
+ "status": "stopped",
+ "elapsed": 261.5,
+ "model_reported": "platform::deepseek/deepseek-v4-flash",
+ "tokens": 1467448,
+ "output": {
+  "analysis": "On 17 train architectures, val_ppl_ep2 alone ranks 30-epoch PPL poorly (Spearman rho=0.344). The epoch-2 generalization margin val_ppl_ep2/train_ppl_ep2 (train PPL is a dropout-on running average) is a stronger early signal (rho=0.499 alone); combining it with val_ppl_ep2 reaches rho=0.697. Adding a fixed penalty for the 'hgrn2_chunkwise' source marker (all 3 such train archs land at 30-epoch PPL 81-84, i.e. early-saturating) lifts train rho to 0.754, robust under leave-one-out (mean 0.750, min 0.712).",
+  "hypothesis": "The 2-epoch generalization margin (val/train PPL) predicts 30-epoch quality better than raw 2-epoch val PPL because it measures how much the model is still fitting rather than overfitting at epoch 2; HGRN2-family blocks early-saturate, so their 30-epoch PPL is systematically worse than their 2-epoch margin suggests.",
+  "formula": "score = 100*(val_ppl_ep2/train_ppl_ep2) + 0.21*val_ppl_ep2 + 1.0*(1 if 'hgrn2_chunkwise' in code else 0)",
+  "fitted_constants": 2,
+  "train_rho": 0.7537,
+  "expected_test_rho": 0.45,
+  "test_ranking": [
+   "r03v2nk-a7e01d",
+   "r09v1-673a31",
+   "r06v2-5fbf90",
+   "r14a-d60a72",
+   "r03a5-b5331e",
+   "r14a-acc9a5",
+   "r12v2-d688f2",
+   "r13v2-c0de0b",
+   "r03a-41565f",
+   "r05a-cac0f0",
+   "r13v2-404945",
+   "r08a-fb7725",
+   "r05a-c05337",
+   "r02a5-7e4ed8",
+   "r14v1-545f8a",
+   "r16v1-9c505f",
+   "r11v1-0220f7",
+   "r09a-22a7de",
+   "r06v1-c7c3fe",
+   "r10a-7897ed",
+   "r02a5-e8882f"
+  ]
+ },
+ "files": {
+  "predictor.py": "\"\"\"Predict 30-epoch validation PPL from a 2-epoch run plus the program source.\n\nscore(row, code) -> float, lower = predicted better 30-epoch PPL.\n\nFormula (2 fitted constants: 100, 0.21; marker weight fixed at 1.0):\n    score = 100 * (val_ppl_ep2 / train_ppl_ep2) + 0.21 * val_ppl_ep2\n            + 1.0 * (1 if 'hgrn2_chunkwise' in code else 0)\n\nRationale: val_ppl_ep2 alone ranks 30-epoch PPL poorly (Spearman rho ~0.34 on\ntrain). The epoch-2 generalization margin val_ppl_ep2/train_ppl_ep2 (train PPL\nis a dropout-on running average) is a stronger early signal (rho ~0.50 alone);\ncombining it with val_ppl_ep2 reaches rho ~0.70. The 'hgrn2_chunkwise' source\nmarker flags HGRN2-family blocks that early-saturate (all three such train\narchitectures land at 30-epoch PPL 81-84), adding a fixed penalty that lifts\ntrain rho to ~0.75 and is robust under leave-one-out (mean ~0.75).\n\"\"\"\n\n\ndef score(row: dict, code: str) -> float:\n    val_ppl_ep2 = float(row[\"val_ppl_ep2\"])\n    train_ppl_ep2 = float(row[\"train_ppl_ep2\"])\n    margin = val_ppl_ep2 / train_ppl_ep2\n    hgrn2_penalty = 1.0 if \"hgrn2_chunkwise\" in code else 0.0\n    return 100.0 * margin + 0.21 * val_ppl_ep2 + hgrn2_penalty\n"
+ }
+}

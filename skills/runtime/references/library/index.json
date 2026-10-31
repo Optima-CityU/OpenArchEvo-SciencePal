@@ -1,0 +1,2077 @@
+{
+ "note": "Historical metrics are background from the OpenArchEvo paper archive (different protocol; split provenance under audit). Not results of this run.",
+ "demo_parents": [
+  "i09-s0557",
+  "i03-s0335",
+  "i00-deltanet"
+ ],
+ "programs": [
+  {
+   "key": "i00-deltanet",
+   "name": "DeltaNet",
+   "base_family": "DeltaNet",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 58.28,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.15166015923023224
+   }
+  },
+  {
+   "key": "i00-retnet",
+   "name": "RetNet",
+   "base_family": "RetNet",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 88.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 37200,
+    "fire_rate": 0.0943145751953125
+   }
+  },
+  {
+   "key": "i00-lightnet",
+   "name": "LightNet",
+   "base_family": "LightNet",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 64.57,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.1051839217543602
+   }
+  },
+  {
+   "key": "i00-gla",
+   "name": "GLA",
+   "base_family": "GLA",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 65.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29792,
+    "fire_rate": 0.0997314453125
+   }
+  },
+  {
+   "key": "i00-hgrn",
+   "name": "HGRN",
+   "base_family": "HGRN",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 68.07,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29056,
+    "fire_rate": 0.11474609375
+   }
+  },
+  {
+   "key": "i00-hgrn2",
+   "name": "HGRN2",
+   "base_family": "HGRN2",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 67.42,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29568,
+    "fire_rate": 0.1067911759018898
+   }
+  },
+  {
+   "key": "i00-rwkv-6",
+   "name": "RWKV-6",
+   "base_family": "RWKV-6",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 65.12,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 53984,
+    "fire_rate": 0.0936279296875
+   }
+  },
+  {
+   "key": "i00-rwkv-7",
+   "name": "RWKV-7",
+   "base_family": "RWKV-7",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 65.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 45776,
+    "fire_rate": 0.10706786811351776
+   }
+  },
+  {
+   "key": "i00-abc",
+   "name": "ABC",
+   "base_family": "ABC",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 73.72,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 55632,
+    "fire_rate": 0.1225179061293602
+   }
+  },
+  {
+   "key": "i00-gsa",
+   "name": "GSA",
+   "base_family": "GSA",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 64.27,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 81488,
+    "fire_rate": 0.102294921875
+   }
+  },
+  {
+   "key": "i00-gated-deltanet",
+   "name": "Gated DeltaNet",
+   "base_family": "Gated DeltaNet",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 67.01,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34400,
+    "fire_rate": 0.1127115860581398
+   }
+  },
+  {
+   "key": "i00-kda",
+   "name": "KDA",
+   "base_family": "KDA",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 81.53,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34640,
+    "fire_rate": 0.11209716647863388
+   }
+  },
+  {
+   "key": "i00-mamba-s6",
+   "name": "Mamba (S6)",
+   "base_family": "Mamba (S6)",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 65.98,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 50240,
+    "fire_rate": 0.038491588085889816
+   }
+  },
+  {
+   "key": "i00-mamba2-ssd",
+   "name": "Mamba2 (SSD)",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 65.66,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58568,
+    "fire_rate": 0.05206298828125
+   }
+  },
+  {
+   "key": "i00-mesanet",
+   "name": "MesaNet",
+   "base_family": "MesaNet",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 71.76,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 30032,
+    "fire_rate": 0.1171196848154068
+   }
+  },
+  {
+   "key": "i00-comba",
+   "name": "Comba",
+   "base_family": "Comba",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 66.11,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i00-metala",
+   "name": "MetaLA",
+   "base_family": "MetaLA",
+   "collection": "expert",
+   "iteration": "0",
+   "hist_wt2_ppl": 64.36,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 33440,
+    "fire_rate": 0.028594970703125
+   }
+  },
+  {
+   "key": "i01-s0050",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 490.43,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38800,
+    "fire_rate": 0.11224920302629471
+   }
+  },
+  {
+   "key": "i01-s0054",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 171.65,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 42320,
+    "fire_rate": 0.10954590141773224
+   }
+  },
+  {
+   "key": "i01-s0327",
+   "name": "",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 70.26,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 50768,
+    "fire_rate": 0.130859375
+   }
+  },
+  {
+   "key": "i01-s0410",
+   "name": "spiking_fla_comba_v3",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 59.01,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i01-s0593",
+   "name": "",
+   "base_family": "HGRN",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 72.7,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 55812,
+    "fire_rate": 0.11674360930919647
+   }
+  },
+  {
+   "key": "i01-s0611",
+   "name": "spiking_fla_adaptive_gated_block",
+   "base_family": "HGRN",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 74.83,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 59732,
+    "fire_rate": 0.10130726546049118
+   }
+  },
+  {
+   "key": "i01-s0794",
+   "name": "spiking_fla_dual_gating",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 164.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 67280,
+    "fire_rate": 0.12640787661075592
+   }
+  },
+  {
+   "key": "i01-s0802",
+   "name": "spiking_fla_adaptive_local_gates",
+   "base_family": "HGRN",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 77.37,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 80528,
+    "fire_rate": 0.0875069722533226
+   }
+  },
+  {
+   "key": "i01-s0819",
+   "name": "",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 63.37,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 46928,
+    "fire_rate": 0.10934682935476303
+   }
+  },
+  {
+   "key": "i01-s0884",
+   "name": "spiking_fla_output_gated_scaler",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 71.61,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 51024,
+    "fire_rate": 0.1009085550904274
+   }
+  },
+  {
+   "key": "i01-s0885",
+   "name": "",
+   "base_family": "HGRN",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 77.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 89388,
+    "fire_rate": 0.09561920166015625
+   }
+  },
+  {
+   "key": "i01-s1057",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 355.29,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 68176,
+    "fire_rate": 0.10865071415901184
+   }
+  },
+  {
+   "key": "i01-s1062",
+   "name": "",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 90.11,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 63952,
+    "fire_rate": 0.11559244990348816
+   }
+  },
+  {
+   "key": "i01-s1076",
+   "name": "spiking_fla_gated_spike_residual",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "1",
+   "hist_wt2_ppl": 78.65,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 55120,
+    "fire_rate": 0.10244140774011612
+   }
+  },
+  {
+   "key": "i02-s0007",
+   "name": "",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 126.19,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 47064,
+    "fire_rate": 0.11196664720773697
+   }
+  },
+  {
+   "key": "i02-s0050",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 59.01,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i02-s0114",
+   "name": "",
+   "base_family": "GLA",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 68.49,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29792,
+    "fire_rate": 0.07978515326976776
+   }
+  },
+  {
+   "key": "i02-s0120",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 66.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 107216,
+    "fire_rate": 0.06393229216337204
+   }
+  },
+  {
+   "key": "i02-s0223",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 71.5,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.09140624850988388
+   }
+  },
+  {
+   "key": "i02-s0273",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 57.42,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i02-s0371",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 70.45,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i02-s0636",
+   "name": "",
+   "base_family": "GLA",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 122.36,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 46176,
+    "fire_rate": 0.08843994140625
+   }
+  },
+  {
+   "key": "i02-s0645",
+   "name": "",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 66.56,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 63696,
+    "fire_rate": 0.08188045769929886
+   }
+  },
+  {
+   "key": "i02-s0672",
+   "name": "spiking_fla_comba_simplifiedmlp",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 57.46,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i02-s0870",
+   "name": "SpikingFLABlock_MesaSpikeGated",
+   "base_family": "MesaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 787.28,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 42472,
+    "fire_rate": 0.10790075361728668
+   }
+  },
+  {
+   "key": "i02-s0999",
+   "name": "",
+   "base_family": "DeltaProduct",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 114.51,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34384,
+    "fire_rate": 0.0915018692612648
+   }
+  },
+  {
+   "key": "i02-s1026",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 119.25,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 41552,
+    "fire_rate": 0.11862792819738388
+   }
+  },
+  {
+   "key": "i02-s1048",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 59.55,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11193347722291946
+   }
+  },
+  {
+   "key": "i02-s1069",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "2",
+   "hist_wt2_ppl": 69.44,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.09056396782398224
+   }
+  },
+  {
+   "key": "i03-s0007",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 59.88,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i03-s0044",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 172.03,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34640,
+    "fire_rate": 0.11209716647863388
+   }
+  },
+  {
+   "key": "i03-s0165",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 59.76,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11199439316987991
+   }
+  },
+  {
+   "key": "i03-s0328",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 97.77,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.08993326872587204
+   }
+  },
+  {
+   "key": "i03-s0335",
+   "name": "HomeoResSSM",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 57.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58698,
+    "fire_rate": 0.04402777925133705
+   }
+  },
+  {
+   "key": "i03-s0417",
+   "name": "",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 61.43,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.08608176559209824
+   }
+  },
+  {
+   "key": "i03-s0427",
+   "name": "spiking_fla_mamba2_hybrid_gated",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 125.37,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 108232,
+    "fire_rate": 0.02705373428761959
+   }
+  },
+  {
+   "key": "i03-s0439",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 69.28,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34520,
+    "fire_rate": 0.11023968458175659
+   }
+  },
+  {
+   "key": "i03-s0491",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 62.88,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11194870620965958
+   }
+  },
+  {
+   "key": "i03-s0682",
+   "name": "SpikingFLABlock_GatedMLP_Comba",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 60.08,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38121,
+    "fire_rate": 0.1174045130610466
+   }
+  },
+  {
+   "key": "i03-s0977",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 171.67,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34664,
+    "fire_rate": 0.09792792052030563
+   }
+  },
+  {
+   "key": "i03-s1087",
+   "name": "",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "3",
+   "hist_wt2_ppl": 61.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.0860595703125
+   }
+  },
+  {
+   "key": "i04-s0001",
+   "name": "spiking_fla_adaptive_mamba2",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 59.03,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58706,
+    "fire_rate": 0.04204199090600014
+   }
+  },
+  {
+   "key": "i04-s0116",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 62.98,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11214129626750946
+   }
+  },
+  {
+   "key": "i04-s0175",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 68.61,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i04-s0402",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 59.17,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i04-s0509",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 96.78,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 30313,
+    "fire_rate": 0.09940113872289658
+   }
+  },
+  {
+   "key": "i04-s0589",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 63.12,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11199439316987991
+   }
+  },
+  {
+   "key": "i04-s0600",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 62.26,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11194870620965958
+   }
+  },
+  {
+   "key": "i04-s0604",
+   "name": "spiking_fla_rate_regularized",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 58.11,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i04-s0658",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 60.35,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114105224609375
+   }
+  },
+  {
+   "key": "i04-s0695",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 61.26,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11204008013010025
+   }
+  },
+  {
+   "key": "i04-s0721",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 60.0,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11199439316987991
+   }
+  },
+  {
+   "key": "i04-s0743",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 60.82,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114471435546875
+   }
+  },
+  {
+   "key": "i04-s0956",
+   "name": "",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "4",
+   "hist_wt2_ppl": 69.08,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58578,
+    "fire_rate": 0.0490754209458828
+   }
+  },
+  {
+   "key": "i05-s0001",
+   "name": "",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 59.08,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58698,
+    "fire_rate": 0.04402777925133705
+   }
+  },
+  {
+   "key": "i05-s0010",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 62.14,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11214129626750946
+   }
+  },
+  {
+   "key": "i05-s0047",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 122.68,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.059955302625894547
+   }
+  },
+  {
+   "key": "i05-s0054",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 57.46,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11193347722291946
+   }
+  },
+  {
+   "key": "i05-s0107",
+   "name": "spiking_fla_neuron_only_mlp",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 60.17,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114471435546875
+   }
+  },
+  {
+   "key": "i05-s0198",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 59.93,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114471435546875
+   }
+  },
+  {
+   "key": "i05-s0289",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 61.32,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38424,
+    "fire_rate": 0.11037521809339523
+   }
+  },
+  {
+   "key": "i05-s0363",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 75.05,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 42240,
+    "fire_rate": 0.1368611603975296
+   }
+  },
+  {
+   "key": "i05-s0410",
+   "name": "SpikingFLABlock_MultiFeatureGating",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 68.8,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58595,
+    "fire_rate": 0.05129419267177582
+   }
+  },
+  {
+   "key": "i05-s0486",
+   "name": "spiking_fla_regulated_hybrid",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 62.78,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11214129626750946
+   }
+  },
+  {
+   "key": "i05-s0529",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 116.23,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.08393742144107819
+   }
+  },
+  {
+   "key": "i05-s0921",
+   "name": "spiking_fla_spike_gain_gate",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 59.71,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29931,
+    "fire_rate": 0.11286245286464691
+   }
+  },
+  {
+   "key": "i05-s0949",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "5",
+   "hist_wt2_ppl": 58.27,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11199439316987991
+   }
+  },
+  {
+   "key": "i06-s0005",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 58.68,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i06-s0009",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 70.9,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 46744,
+    "fire_rate": 0.08858224004507065
+   }
+  },
+  {
+   "key": "i06-s0049",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 94.08,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114471435546875
+   }
+  },
+  {
+   "key": "i06-s0154",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 95.83,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 40905,
+    "fire_rate": 0.09023042023181915
+   }
+  },
+  {
+   "key": "i06-s0201",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 58.81,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i06-s0312",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 58.29,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34520,
+    "fire_rate": 0.10986043512821198
+   }
+  },
+  {
+   "key": "i06-s0536",
+   "name": "",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 67.19,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58700,
+    "fire_rate": 0.04402777925133705
+   }
+  },
+  {
+   "key": "i06-s0555",
+   "name": "spiking_fla_gelu_enriched_ssd",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 57.39,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58698,
+    "fire_rate": 0.04399305582046509
+   }
+  },
+  {
+   "key": "i06-s0590",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 57.79,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34140,
+    "fire_rate": 0.11435072869062424
+   }
+  },
+  {
+   "key": "i06-s0601",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 59.77,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.114471435546875
+   }
+  },
+  {
+   "key": "i06-s0740",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 58.61,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38121,
+    "fire_rate": 0.1174045130610466
+   }
+  },
+  {
+   "key": "i06-s0742",
+   "name": "SpikingFLABlock_RefinedBetaModulation",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 62.64,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11227808892726898
+   }
+  },
+  {
+   "key": "i06-s1021",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 63.65,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11227808892726898
+   }
+  },
+  {
+   "key": "i06-s1039",
+   "name": "SpikingFLABlock_Comba_v3",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "6",
+   "hist_wt2_ppl": 100.61,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.07924677431583405
+   }
+  },
+  {
+   "key": "i07-s0001",
+   "name": "spiking_fla_gated_mlp_ss4d",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 74.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 42240,
+    "fire_rate": 0.13739013671875
+   }
+  },
+  {
+   "key": "i07-s0002",
+   "name": "spiking_fla_gated_residual",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 67.85,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58176,
+    "fire_rate": 0.08551699668169022
+   }
+  },
+  {
+   "key": "i07-s0003",
+   "name": "",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 75.99,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.09665151685476303
+   }
+  },
+  {
+   "key": "i07-s0006",
+   "name": "",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 57.46,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 58698,
+    "fire_rate": 0.04402777925133705
+   }
+  },
+  {
+   "key": "i07-s0319",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 97.22,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 25089,
+    "fire_rate": 0.0509846992790699
+   }
+  },
+  {
+   "key": "i07-s0334",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 120.88,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 50112,
+    "fire_rate": 0.0758819580078125
+   }
+  },
+  {
+   "key": "i07-s0366",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 91.04,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 81620,
+    "fire_rate": 0.03973032534122467
+   }
+  },
+  {
+   "key": "i07-s0487",
+   "name": "SpikingFLABlock_TemporalSpikeGating",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 69.15,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34526,
+    "fire_rate": 0.11171116679906845
+   }
+  },
+  {
+   "key": "i07-s0665",
+   "name": "spiking_fla_gated_mlp_block",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 60.65,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34264,
+    "fire_rate": 0.11214129626750946
+   }
+  },
+  {
+   "key": "i07-s0849",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 68.23,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34394,
+    "fire_rate": 0.11013349145650864
+   }
+  },
+  {
+   "key": "i07-s0864",
+   "name": "",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 61.46,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.08608176559209824
+   }
+  },
+  {
+   "key": "i07-s0881",
+   "name": "SpikingFLABlock_RobustGatingSNN",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 66.6,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 90064,
+    "fire_rate": 0.08203125
+   }
+  },
+  {
+   "key": "i07-s0884",
+   "name": "LoopMem",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 57.21,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i07-s0903",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 67.27,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 90704,
+    "fire_rate": 0.08189808577299118
+   }
+  },
+  {
+   "key": "i07-s0910",
+   "name": "SpikingFLABlock_AdaptiveGatedSSM",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 77.66,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38200,
+    "fire_rate": 0.10991211235523224
+   }
+  },
+  {
+   "key": "i07-s0937",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "7",
+   "hist_wt2_ppl": 58.13,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34398,
+    "fire_rate": 0.11337209492921829
+   }
+  },
+  {
+   "key": "i08-s0001",
+   "name": "",
+   "base_family": "KDA",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 129.87,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34770,
+    "fire_rate": 0.117950439453125
+   }
+  },
+  {
+   "key": "i08-s0016",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 96.33,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 25089,
+    "fire_rate": 0.0509846992790699
+   }
+  },
+  {
+   "key": "i08-s0032",
+   "name": "spiking_fla_spike_ffn_mod",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 65.97,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34336,
+    "fire_rate": 0.11541948467493057
+   }
+  },
+  {
+   "key": "i08-s0309",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 58.23,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i08-s0414",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 108.28,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 37761,
+    "fire_rate": 0.0361328125
+   }
+  },
+  {
+   "key": "i08-s0417",
+   "name": "spiking_fla_inlined_ffn",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 70.7,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 41856,
+    "fire_rate": 0.0859578475356102
+   }
+  },
+  {
+   "key": "i08-s0442",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 65.71,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34462,
+    "fire_rate": 0.11294125020503998
+   }
+  },
+  {
+   "key": "i08-s0517",
+   "name": "spiking_fla_decoupled_gating_reg",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 64.44,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34336,
+    "fire_rate": 0.11541948467493057
+   }
+  },
+  {
+   "key": "i08-s0629",
+   "name": "spiking_fla_adaptive_mlp_gate",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 64.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 35168,
+    "fire_rate": 0.11185943335294724
+   }
+  },
+  {
+   "key": "i08-s0658",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 96.42,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 25025,
+    "fire_rate": 0.0507405586540699
+   }
+  },
+  {
+   "key": "i08-s0780",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 58.36,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i08-s0829",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 73.4,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 41856,
+    "fire_rate": 0.08514404296875
+   }
+  },
+  {
+   "key": "i08-s1051",
+   "name": "",
+   "base_family": "S4D (SS4D) + GSA",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 75.13,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 110803,
+    "fire_rate": 0.07041109353303909
+   }
+  },
+  {
+   "key": "i08-s1056",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "8",
+   "hist_wt2_ppl": 95.16,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 33428,
+    "fire_rate": 0.11087211221456528
+   }
+  },
+  {
+   "key": "i09-s0001",
+   "name": "spiking_fla_ss4d_gated",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 96.09,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29185,
+    "fire_rate": 0.07611083984375
+   }
+  },
+  {
+   "key": "i09-s0057",
+   "name": "",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 60.84,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.0860595703125
+   }
+  },
+  {
+   "key": "i09-s0069",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 62.71,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11204008013010025
+   }
+  },
+  {
+   "key": "i09-s0216",
+   "name": "spiking_fla_gated_v_delta_net",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 63.78,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34272,
+    "fire_rate": 0.11584994941949844
+   }
+  },
+  {
+   "key": "i09-s0335",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 57.47,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i09-s0357",
+   "name": "spiking_fla_adaptive_gating",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 61.16,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11204008013010025
+   }
+  },
+  {
+   "key": "i09-s0369",
+   "name": "SpikingFLABlock_DualGatedMLP",
+   "base_family": "LightNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 61.18,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 57792,
+    "fire_rate": 0.07282902300357819
+   }
+  },
+  {
+   "key": "i09-s0424",
+   "name": "spiking_fla_dynamic_beta_reg_block",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 62.86,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34136,
+    "fire_rate": 0.11204008013010025
+   }
+  },
+  {
+   "key": "i09-s0437",
+   "name": "spiking_fla_holistic_gating",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 75.23,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34398,
+    "fire_rate": 0.11337209492921829
+   }
+  },
+  {
+   "key": "i09-s0550",
+   "name": "spiking_fla_comba_generalized_reg",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 58.81,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i09-s0557",
+   "name": "NeuroGate",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 57.22,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34144,
+    "fire_rate": 0.117475725710392
+   }
+  },
+  {
+   "key": "i09-s0729",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 58.64,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i09-s1029",
+   "name": "spiking_fla_adaptive_reg",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "9",
+   "hist_wt2_ppl": 58.8,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34140,
+    "fire_rate": 0.11435072869062424
+   }
+  },
+  {
+   "key": "i10-s0005",
+   "name": "",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 109.82,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 33432,
+    "fire_rate": 0.11100977659225464
+   }
+  },
+  {
+   "key": "i10-s0016",
+   "name": "spiking_fla_comba_regulated",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 58.71,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i10-s0042",
+   "name": "SpikingFLABlock_AdaptiveMLPBias",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 60.41,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34384,
+    "fire_rate": 0.11348604410886765
+   }
+  },
+  {
+   "key": "i10-s0179",
+   "name": "SpikingFLABlock_Comba_V3",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 60.04,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i10-s0194",
+   "name": "",
+   "base_family": "DeltaProduct",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 123.45,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 42576,
+    "fire_rate": 0.07458243519067764
+   }
+  },
+  {
+   "key": "i10-s0277",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 58.05,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 81488,
+    "fire_rate": 0.102294921875
+   }
+  },
+  {
+   "key": "i10-s0287",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 109.51,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 107024,
+    "fire_rate": 0.06483561545610428
+   }
+  },
+  {
+   "key": "i10-s0309",
+   "name": "SpikingFLABlock_regulated",
+   "base_family": "DeltaNet",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 58.79,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.1142578125
+   }
+  },
+  {
+   "key": "i10-s0337",
+   "name": "",
+   "base_family": "GSA",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 57.02,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 81488,
+    "fire_rate": 0.1023084819316864
+   }
+  },
+  {
+   "key": "i10-s0494",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 62.77,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38610,
+    "fire_rate": 0.1168077290058136
+   }
+  },
+  {
+   "key": "i10-s0713",
+   "name": "",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 57.61,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 60650,
+    "fire_rate": 0.07258157432079315
+   }
+  },
+  {
+   "key": "i10-s0716",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 87.46,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29185,
+    "fire_rate": 0.054046630859375
+   }
+  },
+  {
+   "key": "i10-s0724",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 58.93,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i10-s0847",
+   "name": "spiking_fla_sparse_activation",
+   "base_family": "Mamba2 (SSD)",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 58.85,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 60650,
+    "fire_rate": 0.07256720960140228
+   }
+  },
+  {
+   "key": "i10-s0869",
+   "name": "",
+   "base_family": "Comba",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 59.88,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 29801,
+    "fire_rate": 0.1132049560546875
+   }
+  },
+  {
+   "key": "i10-s1056",
+   "name": "",
+   "base_family": "S4D (SS4D)",
+   "collection": "discovered",
+   "iteration": "10",
+   "hist_wt2_ppl": 76.83,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 45577,
+    "fire_rate": 0.1391194611787796
+   }
+  },
+  {
+   "key": "r02a-e29092",
+   "name": "r02a-e29092",
+   "base_family": "DeltaNet",
+   "collection": "hackathon-2026-10",
+   "iteration": "h",
+   "hist_wt2_ppl": null,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 38224,
+    "fire_rate": 0.1141
+   }
+  },
+  {
+   "key": "r04v2-bf4d6a",
+   "name": "r04v2-bf4d6a",
+   "base_family": "DeltaNet",
+   "collection": "hackathon-2026-10",
+   "iteration": "h",
+   "hist_wt2_ppl": null,
+   "has_rationale": true,
+   "cpu_demo_v1": {
+    "params_per_block": 34128,
+    "fire_rate": 0.12066650390625
+   }
+  }
+ ]
+}

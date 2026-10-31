@@ -1,0 +1,42 @@
+{
+ "tag": "glm53",
+ "model_requested": "zai/glm-5.3",
+ "status": "completed",
+ "elapsed": 690.8,
+ "model_reported": "zai/glm-5.3",
+ "tokens": 2082583,
+ "output": {
+  "analysis": "val_ppl_ep2 spans 117.11-126.97 but correlates only rho=+0.352 with val_ppl_30ep (69.02-118.55): best-30ep r02a-e29092 (69.02) has mid v2=117.70, while r12a-8ed893 ties 2nd-best v2=117.55 yet lands 85.67 and r16v1 (v2=121.58) diverges to 118.55. The epoch-2 generalization margin val_ppl_ep2/train_ppl_ep2 (0.609-0.707) tracks slow memorisation-vs-generalisation and correlates rho=+0.492 alone; params/fire-rate help less (|rho|<=0.34).",
+  "hypothesis": "Architectures that generalise rather than memorise at epoch 2 — small val/train PPL ratio with dropout on — continue gaining from longer training, whereas the element-wise HGRN2 recurrence saturates early and loses ground by epoch 30.",
+  "formula": "score = 100 * (val_ppl_ep2 / train_ppl_ep2) + 0.21 * val_ppl_ep2 + 1.0 * (1 if 'hgrn2_chunkwise' in program source else 0); lower = better",
+  "fitted_constants": 2,
+  "train_rho": 0.7517,
+  "expected_test_rho": 0.55,
+  "test_ranking": [
+   "r03v2nk-a7e01d",
+   "r09v1-673a31",
+   "r06v2-5fbf90",
+   "r14a-d60a72",
+   "r03a5-b5331e",
+   "r14a-acc9a5",
+   "r12v2-d688f2",
+   "r13v2-c0de0b",
+   "r03a-41565f",
+   "r05a-cac0f0",
+   "r13v2-404945",
+   "r08a-fb7725",
+   "r05a-c05337",
+   "r02a5-7e4ed8",
+   "r14v1-545f8a",
+   "r16v1-9c505f",
+   "r11v1-0220f7",
+   "r09a-22a7de",
+   "r06v1-c7c3fe",
+   "r10a-7897ed",
+   "r02a5-e8882f"
+  ]
+ },
+ "files": {
+  "predictor.py": "\"\"\"Cheap 30-epoch val PPL predictor from 2-epoch signals + program source.\n\nMechanistic idea: the epoch-2 generalization margin (val_ppl_ep2 / train_ppl_ep2,\ntrain PPL measured with dropout on) reflects how fast an architecture memorises\ntraining noise relative to generalising. Architectures with a large margin keep\nlosing ground over the remaining 28 epochs, whatever their absolute early val\nlevel. The element-wise HGRN2 recurrence family additionally lags at 30 epochs.\n\nscore = 100 * (val_ppl_ep2 / train_ppl_ep2) + 0.21 * val_ppl_ep2 + 1.0 * hgrn2\nlower score = predicted lower (better) 30-epoch val PPL.\nFitted constants: 0.21 (weight of val_ppl_ep2 vs ratio) and 1.0 (HGRN2 penalty),\ngrid-searched for Spearman rho on the 17 training rows; LOO-refit picks the same\nconstants in 11/17 folds. Train rho = 0.7517.\n\"\"\"\n\nHGRN2_MARKER = \"hgrn2_chunkwise\"\nW_VAL = 0.21\nHGRN2_PENALTY = 1.0\n\n\ndef score(row: dict, code: str) -> float:\n    \"\"\"Predict the 30-epoch validation perplexity rank of one architecture.\n\n    Args:\n        row: dict of test.csv columns as strings (needs train_ppl_ep2,\n             val_ppl_ep2).\n        code: the program source text.\n\n    Returns:\n        float, lower = predicted better 30-epoch val PPL.\n    \"\"\"\n    v2 = float(row[\"val_ppl_ep2\"])\n    t2 = float(row[\"train_ppl_ep2\"])\n    ratio = v2 / t2\n    hgrn2 = 1.0 if HGRN2_MARKER in code else 0.0\n    return 100.0 * ratio + W_VAL * v2 + HGRN2_PENALTY * hgrn2\n"
+ }
+}

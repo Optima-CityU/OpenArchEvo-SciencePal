@@ -1,0 +1,26 @@
+# E42 transfer protocol sp-wt2-sltt-s512: same as sp-wt2-sltt-s128 but seq 512 / batch 16 (same tokens per step); paper-like context length.
+# seq 128 / batch 64 / 2 epochs so that the per-timestep neuron loop fits the hackathon budget. Not the paper protocol.
+task: wikitext2
+data_dir: ./data/wikitext-2
+tokenizer: gpt2
+cache_dir: ./data/cache
+seq_len: 512
+model:
+  n_layers: 6
+  d_model: 256
+  num_heads: 8
+  d_ffn_mult: 4
+  dropout: 0.2
+  neuron_type: sltt
+optim:
+  epochs: 2
+  batch_size: 16
+  lr: 0.006
+  weight_decay: 0.15
+  betas:
+  - 0.9
+  - 0.95
+  warmup_steps: 200
+  grad_clip: 2.0
+num_workers: 1
+seed: 0

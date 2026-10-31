@@ -1,0 +1,31 @@
+{
+ "tag": "gpt61",
+ "model_requested": "codex/gpt-6.1-sol-high",
+ "status": "completed",
+ "elapsed": 444.5,
+ "model_reported": "codex/gpt-6.1-sol-high",
+ "tokens": 3655282,
+ "output": {
+  "analysis": "Seed-0 CSV: identity versus sigmoid validation PPL is 136.14/138.77 at epoch 2, 102.49/98.82 at epoch 10, and 69.02/73.23 at epoch 30; identity leads persistently from epoch 20. Sigmoid fits training better throughout: epoch-30 train PPL 37.46 versus identity 40.62, but its descriptive validation-minus-training gap is 35.77 versus 28.40. This suggests poorer generalization, not simply slower optimization. Training PPL uses dropout and is not directly evaluation-comparable. README three-seed means are 68.95 identity versus 73.54 sigmoid; only identity seed 0 has curves. The positive 1+tanh control averages 71.96 best-validation PPL, suggesting amplification alone does not explain identity's advantage. Gate statistics and gradients are unavailable; causality remains unproven.",
+  "hypothesis": "The post-o_proj gate benefits from zero-centered, sign-preserving multiplicative feature interactions: identity lets input-dependent negative coefficients reverse projected features, whereas sigmoid imposes a positive baseline and only rescales them, encouraging a training-specific residual shortcut. This is one unverified signed-interaction hypothesis, not a measured explanation: code establishes the available operations, but curves cannot distinguish sign, centering, scale, and saturation. Falsifiable prediction: tanh should retain most of identity's validation gain despite saturation, while abs should lose it despite retaining unbounded magnitude, and 2*sigmoid should remain nearer the positive 1+tanh control than identity. If abs matches identity and tanh does not, this hypothesis is disfavored. For seed-0 best validation PPL over 30 epochs, I anchor tanh at identity's observed 69.02 with a modest saturation penalty, 2sig near the positive-gate controls (1+tanh mean 71.96, sigmoid seed 0 73.23), and abs above identity because sign is lost, but below positive-offset gates because it retains unsaturated magnitude-dependent gradients. All supplied numbers are subjective, untrained forecasts; each range is a plus/minus PPL half-width expressing mechanism and optimization uncertainty, not a fitted confidence interval or measured seed variance.",
+  "predictions": {
+   "2sig": [
+    72.2,
+    1.2
+   ],
+   "tanh": [
+    69.5,
+    1.0
+   ],
+   "abs": [
+    71.4,
+    1.5
+   ]
+  },
+  "new_variant": {
+   "expr": "g / torch.sqrt(1.0 + 0.1 * g.square())",
+   "rationale": "Replace only the gate activation after o_proj; retain gate_proj and multiplication by o, with no new parameters. This odd, zero-centered soft clip preserves signed interactions and unit slope near zero while allowing amplification and compressing large magnitudes more gently than tanh. Conditional on useful interactions being moderate and extreme gains overfitting, it should slightly improve identity. Predicted seed-0 best validation PPL over 30 epochs is 68.6, with subjective uncertainty about +/-1.0 PPL; beating 68.95 is a testable forecast, not an established result. No gate-tail measurements or new training were performed. Here g denotes the raw analog output of gate_proj, not its binary input spikes.",
+   "predicted_ppl": 68.6
+  }
+ }
+}
